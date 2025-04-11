@@ -1,0 +1,22 @@
+{
+  "name": "whats-the-move",
+  "version": "1.0.0",
+  "description": "What's the move is your friend group's personal planner.  This web application will help ease the process of coordinating plans with friends.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kailaaquino/whats-the-move.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kailaaquino/whats-the-move/issues"
+  },
+  "homepage": "https://github.com/kailaaquino/whats-the-move#readme",
+  "workspaces": [
+    "packages/*"
+  ]
+}
