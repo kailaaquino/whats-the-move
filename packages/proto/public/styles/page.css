@@ -1,8 +1,19 @@
-header, h1, h2, h3 {
+h1 {
   font-family: "Fredoka", sans-serif;
 }
 
-body {
+.title-link {
+  /* header links inherit h1 styles */
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+body,
+h2,
+a,
+p {
   font-family: "Rubik", sans-serif;
   background-color: #171717;
   color: white;
