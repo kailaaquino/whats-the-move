@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-
-<!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Roomies - What's The Move?</title>
+    <title>Roomies - Activities</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,23 +11,52 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="../../styles/tokens.css" />
-    <link rel="stylesheet" href="../../styles/page.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
   </head>
 
-  <body>
-    <header>
-      <h1><a href="../../index.html" class="title-link">WTM</a></h1>
-      <h2><a href="index.html" class="title-link">Roomies</a></h2>
-    </header>
+  <body class="page">
+    <nav class="nav">
+      <h1><a href="/" class="title-link">WTM</a></h1>
 
-    <section class="activities">
-      <h3>Activities</h3>
-      <ul>
-        <li>Woodstocks</li>
-        <li>Pirates Cove</li>
-        <li>KBBQ</li>
-      </ul>
-    </section>
+      <section class="friend-groups">
+        <h2>
+          <svg class="icon">
+            <use href="/icons/sprite.svg#icon-group" />
+          </svg>
+          Friend Groups
+        </h2>
+        <ul>
+          <li>
+            <a href="/friend-groups/side-questers/index.html"
+              >The Side Questers</a
+            >
+          </li>
+          <li><a href="/friend-groups/roomies/index.html">Roomies</a></li>
+        </ul>
+      </section>
+    </nav>
+
+    <div class="grid">
+      <header>
+        <h2>
+          <a href="/friend-groups/roomies/index.html"
+            >Roomies</a
+          >
+        </h2>
+      </header>
+
+      <main>
+        <section class="activities">
+          <h3>Activities</h3>
+          <ul>
+            <li>Woodstocks</li>
+            <li>Pirates Cove</li>
+            <li>KBBQ</li>
+          </ul>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

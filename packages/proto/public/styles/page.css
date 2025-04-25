@@ -48,3 +48,43 @@ svg.icon {
   vertical-align: middle;
   fill: currentColor;
 }
+
+.page {
+  display: flex;
+  background-color: var(--color-bg-dark);
+  min-height: 100vh;
+}
+
+.nav {
+  background-color: var(--color-bg-nav);
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  gap: var(--space-md);
+  border-radius: var(--radius-md);
+  margin: var(--space-lg);
+}
+
+.nav h1 {
+  font-family: var(--font-title);
+  font-size: var(--size-font-xxxl);
+  color: var(--color-accent-yellow);
+  margin-bottom: var(--space-md);
+}
+
+.grid {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: var(--space-md);
+  padding: var(--space-lg);
+}
+
+.grid > header {
+  grid-column: 1 / -1; 
+}
+
+.grid > main {
+  grid-column: 1 / -1; 
+}
