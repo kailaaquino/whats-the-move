@@ -26,6 +26,7 @@ h3 {
   /* for section titles */
   font-family: var(--font-body);
   font-size: var(--size-font-lg);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-xs);
 }
 
@@ -35,6 +36,8 @@ p {
   /* for body */
   font-family: var(--font-body);
   font-size: var(--size-font-body);
+  color: var(--color-text-primary);
   font-weight: 400;
   margin-bottom: var(--space-sm);
+  background-color: var(--color-bg-dark);
 }
