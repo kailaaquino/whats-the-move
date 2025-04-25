@@ -1,5 +1,10 @@
 h1 {
-  font-family: "Fredoka", sans-serif;
+  font-family: var(--font-title);
+  font-size: var(--size-font-xxxl);
+  color: var(--color-accent-yellow);
+  background-color: var(--color-bg-nav);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
 }
 
 .title-link {
@@ -10,11 +15,26 @@ h1 {
   display: inline-block;
 }
 
+h2 {
+  /* for page titles */
+  font-family: var(--font-body);
+  font-size: var(--size-font-xxl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+h3 {
+  /* for section titles */
+  font-family: var(--font-body);
+  font-size: var(--size-font-lg);
+  margin-bottom: var(--space-xs);
+}
+
 body,
-h2,
-a,
+li,
 p {
-  font-family: "Rubik", sans-serif;
-  background-color: #171717;
-  color: white;
+  /* for body */
+  font-family: var(--font-body);
+  font-size: var(--size-font-body);
+  font-weight: 400;
+  margin-bottom: var(--space-sm);
 }
