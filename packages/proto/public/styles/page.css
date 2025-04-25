@@ -41,3 +41,10 @@ p {
   margin-bottom: var(--space-sm);
   background-color: var(--color-bg-dark);
 }
+svg.icon {
+  display: inline;
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+}
