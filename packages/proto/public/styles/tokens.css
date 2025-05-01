@@ -11,9 +11,11 @@
   --color-accent-pink: #f67df6;
   --color-accent-red: #db0004;
 
+  --font-logo: "Chewy", cursive;
   --font-title: "Fredoka", serif;
   --font-body: "Rubik", sans-serif;
 
+  --size-font-xs: 0.75rem;
   --size-font-small: 1rem; /* smaller text */
   --size-font-body: 1.125rem; /* main body */
   --size-font-lg: 1.375rem; /* card titles, subheaders */
