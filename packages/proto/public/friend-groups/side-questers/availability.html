@@ -4,48 +4,51 @@
     <meta charset="utf-8" />
     <title>The Side Questers - Availability</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Rubik:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka:wght@400;700&family=Rubik:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/group-page.css" />
   </head>
 
   <body class="page">
-    <nav class="nav">
-      <h1><a href="/" class="title-link">WTM</a></h1>
+    <nav class="nav-container">
+      <div class="nav-contents">
+        <h1><a href="/" class="title-logo">WTM</a></h1>
 
-      <section class="friend-groups">
         <h2>
-          <svg class="icon">
+          <svg class="nav-icon">
             <use href="/icons/sprite.svg#icon-group" />
           </svg>
-          Friend Groups
         </h2>
-        <ul>
-          <li>
-            <a href="/friend-groups/side-questers/index.html"
-              >The Side Questers</a
-            >
-          </li>
-          <li><a href="/friend-groups/roomies/index.html">Roomies</a></li>
-        </ul>
-      </section>
+
+        <svg class="nav-icon">
+          <use href="/icons/sprite.svg#icon-add" />
+        </svg>
+
+        <h2>
+          <a href="/friend-groups/side-questers/index.html">
+            <span class="nav-text">SQ</span>
+          </a>
+        </h2>
+        <h2>
+          <a href="/friend-groups/roomies/index.html">
+            <span class="nav-text">Roomies</span>
+          </a>
+        </h2>
+      </div>
     </nav>
 
     <div class="grid">
-      <header>
-        <h2>
-          <a href="/friend-groups/side-questers/index.html"
-            >The Side Questers</a
-          >
-        </h2>
-      </header>
+      <a href="index.html" class="page-header">The SideQuesters</a>
 
       <main>
         <section class="availability">

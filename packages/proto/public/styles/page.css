@@ -120,3 +120,8 @@ a {
   font-size: var(--size-font-xs);
   color: var(--color-text-primary);
 }
+
+body{
+  color: var(--color-text-primary); 
+  background-color: var(--color-bg-dark);
+}
