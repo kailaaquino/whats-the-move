@@ -2,63 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Roomies - What's The Move?</title>
+    <title>Roomies</title>
 
+    <!-- Google Fonts:-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Rubik:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka:wght@400;700&family=Rubik:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../styles/reset.css" />
-    <link rel="stylesheet" href="../../styles/tokens.css" />
-    <link rel="stylesheet" href="../../styles/page.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/group-page.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
   </head>
 
   <body class="page">
-    <nav class="nav">
-      <h1><a href="/" class="title-link">WTM</a></h1>
-
-      <section class="friend-groups">
+    <nav class="nav-container">
+      <div class="nav-contents">
+        <h1><a href="/" class="title-logo">WTM</a></h1>
         <h2>
-          <svg class="icon">
+          <svg class="nav-icon">
             <use href="/icons/sprite.svg#icon-group" />
           </svg>
-          Friend Groups
         </h2>
-        <ul>
-          <li>
-            <a href="/friend-groups/side-questers/index.html"
-              >The Side Questers</a
-            >
-          </li>
-          <li><a href="/friend-groups/roomies/index.html">Roomies</a></li>
-        </ul>
+        
+          <svg class="nav-icon">
+            <use href="/icons/sprite.svg#icon-add" />
+          </svg>        
+        <h2>
+          <a href="/friend-groups/side-questers/index.html">
+            <span class="nav-text">SQ</span>
+          </a>
+        </h2>
+        <h2>
+          <a href="/friend-groups/roomies/index.html">
+            <span class="nav-text">Roomies</span>
+          </a>
+        </h2>
       </section>
     </nav>
 
     <div class="grid">
-      <header>
-        <h2>Roomies</h2>
-      </header>
+       <h1 class="page-header"> Roomies</h1>
+       <div class="card-row">  
 
-      <main>
-        <section class="members">
-          <h3><a href="members.html">Members</a></h3>
-        </section>
+        <div class="group-container"> 
+          <a href="create_plan.html" class="group-title">Create Plan</a>
+        </div >
 
-        <section class="activities">
-          <h3><a href="activities.html">Activities</a></h3>
-        </section>
+        <div class="group-container"> 
+          <a href="activities.html" class="group-title"> Activities</a>
+        </div >
 
-        <section class="availability">
-          <h3><a href="availability.html">Availability</a></h3>
-        </section>
+        <div class="group-container"> 
+          <a href="availability.html" class="group-title"> Availability</a>
+        </div >
 
-        <section class="plans">
-          <h3><a href="plans.html">Plans</a></h3>
-        </section>
-      </main>
+        <div class="group-container"> 
+          <a href="members.html" class="group-title"> Members</a>
+        </div >
+
+       </div>
     </div>
+
+  
   </body>
 </html>
