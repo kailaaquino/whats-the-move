@@ -9,7 +9,6 @@
   --color-accent-orange: #ff8c09;
   --color-accent-cyan: #59deff;
   --color-accent-pink: #f67df6;
-  --color-accent-red: #db0004;
 
   --font-logo: "Chewy", cursive;
   --font-title: "Fredoka", serif;
@@ -31,4 +30,12 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
+
+  body.light-mode {
+    --color-bg-dark: white;
+    --color-text-primary: black;
+    --color-bg-nav: #dddddd;
+    --color-accent-yellow: #ff8c09;
+  }
+  
 }

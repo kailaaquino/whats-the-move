@@ -27,10 +27,10 @@
             <use href="/icons/sprite.svg#icon-group" />
           </svg>
         </h2>
-        
-          <svg class="nav-icon">
-            <use href="/icons/sprite.svg#icon-add" />
-          </svg>        
+
+        <svg class="nav-icon">
+          <use href="/icons/sprite.svg#icon-add" />
+        </svg>
         <h2>
           <a href="/friend-groups/side-questers/index.html">
             <span class="nav-text">SQ</span>
@@ -41,20 +41,29 @@
             <span class="nav-text">Roomies</span>
           </a>
         </h2>
-      </section>
+        <label id="theme-toggle-label">
+          <inputtype="checkbox" autocomplete="off" />
+          <span class="nav-text">Light mode</span>
+        </label>
+      </div>
     </nav>
 
     <div class="grid">
-       <h1 class="page-header"> Welcome back! What's your next move?</h1>
-       <div class="card-row">  
-
+      <h1 class="page-header">Welcome back! What's your next move?</h1>
+      <div class="card-row">
         <div class="card-container">
-          <a href="/friend-groups/side-questers/index.html" class="card-colorbox">
-            <div class="card-colorbox"> </div>
+          <a
+            href="/friend-groups/side-questers/index.html"
+            class="card-colorbox"
+          >
+            <div class="card-colorbox"></div>
           </a>
 
           <div class="card-text-container">
-            <a href="/friend-groups/side-questers/index.html" class="card-textLg">
+            <a
+              href="/friend-groups/side-questers/index.html"
+              class="card-textLg"
+            >
               <div class="card-textLg">The SideQuesters</div>
             </a>
             <a href="/friend-groups/side-questers/members.html">
@@ -69,7 +78,7 @@
 
         <div class="card-container">
           <a href="/friend-groups/roomies/index.html" class="card-colorbox">
-            <div class="card-colorbox"> </div>
+            <div class="card-colorbox"></div>
           </a>
 
           <div class="card-text-container">
@@ -85,8 +94,8 @@
             </a>
           </div>
         </div>
-
-       </div>
+      </div>
     </div>
+    <script src="/scripts/toggle-mode.js" defer></script>
   </body>
 </html>
