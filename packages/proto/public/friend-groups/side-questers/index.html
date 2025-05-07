@@ -28,10 +28,10 @@
             <use href="/icons/sprite.svg#icon-group" />
           </svg>
         </h2>
-        
-          <svg class="nav-icon">
-            <use href="/icons/sprite.svg#icon-add" />
-          </svg>        
+
+        <svg class="nav-icon">
+          <use href="/icons/sprite.svg#icon-add" />
+        </svg>
         <h2>
           <a href="/friend-groups/side-questers/index.html">
             <span class="nav-text">SQ</span>
@@ -42,32 +42,34 @@
             <span class="nav-text">Roomies</span>
           </a>
         </h2>
-      </section>
+        <label id="theme-toggle-label">
+          <input type="checkbox" autocomplete="off" />
+          <span class="nav-text">Light mode</span>
+        </label>
+      </div>
     </nav>
 
     <div class="grid">
-       <h1 class="page-header"> The SideQuesters</h1>
-       <div class="card-row">  
-
-        <div class="group-container"> 
+      <h1 class="page-header">The SideQuesters</h1>
+      <div class="card-row">
+        <div class="group-container">
           <a href="create_plan.html" class="group-title">Create Plan</a>
-        </div >
+        </div>
 
-        <div class="group-container"> 
+        <div class="group-container">
           <a href="activities.html" class="group-title"> Activities</a>
-        </div >
+        </div>
 
-        <div class="group-container"> 
+        <div class="group-container">
           <a href="availability.html" class="group-title"> Availability</a>
-        </div >
+        </div>
 
-        <div class="group-container"> 
+        <div class="group-container">
           <a href="members.html" class="group-title"> Members</a>
-        </div >
-
-       </div>
+        </div>
+      </div>
     </div>
 
-  
+    <script src="/scripts/toggle-mode.js" defer></script>
   </body>
 </html>
