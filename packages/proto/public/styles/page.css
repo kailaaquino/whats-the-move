@@ -11,7 +11,6 @@
   color: var(--color-accent-yellow);
   text-decoration: none;
 }
-
 .nav-container {
   background-color: var(--color-bg-nav);
   margin: var(--space-sm);
@@ -22,15 +21,15 @@
   flex-shrink: 0;
 }
 
-.nav-contents { 
+.nav-contents {
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
-  align-items: center;  
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
 }
 
-.nav-text{
+.nav-text {
   text-decoration: none;
   color: var(--color-text-primary);
 }
@@ -47,37 +46,37 @@ a {
   color: inherit;
 }
 
-.grid{
+.grid {
   display: grid;
   flex-direction: column;
   flex: 1;
   gap: var(--space-sm);
 }
 
-.page-header{
+.page-header {
   font-family: var(--font-title);
   font-weight: bold;
   font-size: var(--size-font-xxl);
   color: var(--color-text-primary);
   display: block;
   width: 100%;
-  line-height: 1.1; 
+  line-height: 1.1;
 }
 
 .card-row {
   display: flex;
   flex-direction: row;
-  gap: var(--space-md); 
+  gap: var(--space-md);
   flex-wrap: wrap;
 }
-.card-container{
-  width: 300px;        /* fixed width so 3 fit in one row */
-  height: 300px;       /* fixed height */
+.card-container {
+  width: 300px; /* fixed width so 3 fit in one row */
+  height: 300px; /* fixed height */
   background-color: var(--color-bg-nav);
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
-  flex-shrink: 0;      /* prevent shrinking */
+  flex-shrink: 0; /* prevent shrinking */
   overflow: hidden;
   border-radius: var(--radius-sm);
 }
@@ -86,7 +85,7 @@ a {
   height: 50%; /* half of the parent height */
   background-color: var(--color-accent-pink);
 }
-.card-text-container{
+.card-text-container {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
@@ -96,32 +95,30 @@ a {
   overflow: hidden;
 }
 
-.card-textLg{
+.card-textLg {
   font-family: var(--font-body);
   font-size: var(--size-font-xl);
   font-weight: bold;
   color: var(--color-text-primary);
-
 }
-.card-textMd{
+.card-textMd {
   font-family: var(--font-body);
   font-size: var(--size-font-lg);
   color: var(--color-text-primary);
-
 }
-.card-textSm{
+.card-textSm {
   font-family: var(--font-body);
   font-size: var(--size-font-small);
   color: var(--color-text-primary);
 }
 
-.card-textXs{
+.card-textXs {
   font-family: var(--font-body);
   font-size: var(--size-font-xs);
   color: var(--color-text-primary);
 }
 
-body{
-  color: var(--color-text-primary); 
+body {
+  color: var(--color-text-primary);
   background-color: var(--color-bg-dark);
 }
