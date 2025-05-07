@@ -19,6 +19,7 @@
   </head>
 
   <body class="page">
+    <!-- <wtm-nav></wtm-nav> -->
     <nav class="nav-container">
       <div class="nav-contents">
         <h1><a href="/" class="title-logo">WTM</a></h1>
@@ -97,5 +98,20 @@
       </div>
     </div>
     <script src="/scripts/toggle-mode.js" defer></script>
+    <!-- <script type="module">
+      document.body.addEventListener("theme:toggle", (event) => {
+        const isChecked = event.detail.checked;
+        document.body.classList.toggle("light-mode", isChecked);
+      });
+    </script>
+
+    <script type="module">
+      import { define } from "@calpoly/mustang";
+      import { NavBar } from "/src/nav-bar.js";
+
+      define({
+        "wtm-nav": NavBar,
+      });
+    </script> -->
   </body>
 </html>
