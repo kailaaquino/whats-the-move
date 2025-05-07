@@ -20,53 +20,40 @@
   </head>
 
   <body class="page">
-    <nav class="nav-container">
-      <div class="nav-contents">
-        <h1><a href="/" class="title-logo">WTM</a></h1>
-        <h2>
-          <svg class="nav-icon">
-            <use href="/icons/sprite.svg#icon-group" />
-          </svg>
-        </h2>
-
-        <svg class="nav-icon">
-          <use href="/icons/sprite.svg#icon-add" />
-        </svg>
-        <h2>
-          <a href="/friend-groups/side-questers/index.html">
-            <span class="nav-text">SQ</span>
-          </a>
-        </h2>
-        <h2>
-          <a href="/friend-groups/roomies/index.html">
-            <span class="nav-text">Roomies</span>
-          </a>
-        </h2>
-        <label id="theme-toggle-label">
-          <input type="checkbox" autocomplete="off" />
-          <span class="nav-text">Light mode</span>
-        </label>
-      </div>
-    </nav>
+    <wtm-nav></wtm-nav>
 
     <div class="grid">
       <h1 class="page-header">The SideQuesters</h1>
       <div class="card-row">
-
-        <group-card href="create_plan.html" label="Create Plan">Create Plan</group-card>
-        <group-card href="activities.html" label="Activities">Activities</group-card>
-        <group-card href="availability.html" label="Availability">Availability</group-card>
+        <group-card href="create_plan.html" label="Create Plan"
+          >Create Plan</group-card
+        >
+        <group-card href="activities.html" label="Activities"
+          >Activities</group-card
+        >
+        <group-card href="availability.html" label="Availability"
+          >Availability</group-card
+        >
         <group-card href="members.html" label="Members">Members</group-card>
-        
       </div>
     </div>
-    <script src="/scripts/toggle-mode.js" defer></script>
+    <!-- <script src="public/scripts/toggle-mode.js" defer></script> -->
+     
+    <script type="module">
+      document.body.addEventListener("theme:toggle", (event) => {
+        const isChecked = event.detail.checked;
+        document.body.classList.toggle("light-mode", isChecked);
+      });
+    </script>
+
     <script type="module">
       import { define } from "@calpoly/mustang";
       import { GroupCard } from "/src/group-card.js";
-    
+      import { NavBar } from "/src/nav-bar.js";
+
       define({
-        "group-card": GroupCard
+        "group-card": GroupCard,
+        "wtm-nav": NavBar,
       });
     </script>
   </body>
