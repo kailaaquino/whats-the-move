@@ -20,32 +20,7 @@
   </head>
 
   <body class="page">
-    <nav class="nav-container">
-      <div class="nav-contents">
-        <h1><a href="/" class="title-logo">WTM</a></h1>
-
-        <h2>
-          <svg class="nav-icon">
-            <use href="/icons/sprite.svg#icon-group" />
-          </svg>
-        </h2>
-
-        <svg class="nav-icon">
-          <use href="/icons/sprite.svg#icon-add" />
-        </svg>
-
-        <h2>
-          <a href="/friend-groups/side-questers/index.html">
-            <span class="nav-text">SQ</span>
-          </a>
-        </h2>
-        <h2>
-          <a href="/friend-groups/roomies/index.html">
-            <span class="nav-text">Roomies</span>
-          </a>
-        </h2>
-      </div>
-    </nav>
+    <wtm-nav></wtm-nav>
 
     <div class="grid">
       <a href="index.html" class="page-header">Roomies</a>
@@ -61,5 +36,15 @@
         </section>
       </main>
     </div>
+    <script type="module">
+      import { define } from "@calpoly/mustang";
+      import { ActionCard } from "/src/action-card.js";
+      import { NavBar } from "/src/nav-bar.js";
+
+      define({
+        "action-card": ActionCard,
+        "wtm-nav": NavBar,
+      });
+    </script>
   </body>
 </html>
