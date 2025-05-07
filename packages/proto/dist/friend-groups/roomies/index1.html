@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Roomies</title>
+
+    <!-- Google Fonts:-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka:wght@400;700&family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/group-page.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+  </head>
+
+  <body class="page">
+    <nav class="nav-container">
+      <div class="nav-contents">
+        <h1><a href="/" class="title-logo">WTM</a></h1>
+        <h2>
+          <svg class="nav-icon">
+            <use href="/icons/sprite.svg#icon-group" />
+          </svg>
+        </h2>
+
+        <svg class="nav-icon">
+          <use href="/icons/sprite.svg#icon-add" />
+        </svg>
+        <h2>
+          <a href="/friend-groups/side-questers/index.html">
+            <span class="nav-text">SQ</span>
+          </a>
+        </h2>
+        <h2>
+          <a href="/friend-groups/roomies/index.html">
+            <span class="nav-text">Roomies</span>
+          </a>
+        </h2>
+        <label id="theme-toggle-label">
+          <input type="checkbox" autocomplete="off" />
+          <span class="nav-text">Light mode</span>
+        </label>
+      </div>
+    </nav>
+
+    <div class="grid">
+      <h1 class="page-header">Roomies</h1>
+      <div class="card-row">
+        <div class="group-container">
+          <a href="create_plan.html" class="group-title">Create Plan</a>
+        </div>
+
+        <div class="group-container">
+          <a href="activities.html" class="group-title"> Activities</a>
+        </div>
+
+        <div class="group-container">
+          <a href="availability.html" class="group-title"> Availability</a>
+        </div>
+
+        <div class="group-container">
+          <a href="members.html" class="group-title"> Members</a>
+        </div>
+      </div>
+    </div>
+    <script src="/scripts/toggle-mode.js" defer></script>
+  </body>
+</html>
