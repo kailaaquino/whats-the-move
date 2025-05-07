@@ -25,20 +25,20 @@
     <div class="grid">
       <h1 class="page-header">The SideQuesters</h1>
       <div class="card-row">
-        <group-card href="create_plan.html" label="Create Plan"
-          >Create Plan</group-card
+        <action-card href="create_plan.html" label="Create Plan"
+          >Create Plan</action-card
         >
-        <group-card href="activities.html" label="Activities"
-          >Activities</group-card
+        <action-card href="activities.html" label="Activities"
+          >Activities</action-card
         >
-        <group-card href="availability.html" label="Availability"
-          >Availability</group-card
+        <action-card href="availability.html" label="Availability"
+          >Availability</action-card
         >
-        <group-card href="members.html" label="Members">Members</group-card>
+        <action-card href="members.html" label="Members">Members</action-card>
       </div>
     </div>
     <!-- <script src="public/scripts/toggle-mode.js" defer></script> -->
-     
+
     <script type="module">
       document.body.addEventListener("theme:toggle", (event) => {
         const isChecked = event.detail.checked;
@@ -48,11 +48,11 @@
 
     <script type="module">
       import { define } from "@calpoly/mustang";
-      import { GroupCard } from "/src/group-card.js";
+      import { ActionCard } from "/src/action-card.js";
       import { NavBar } from "/src/nav-bar.js";
 
       define({
-        "group-card": GroupCard,
+        "action-card": ActionCard,
         "wtm-nav": NavBar,
       });
     </script>
