@@ -19,36 +19,7 @@
   </head>
 
   <body class="page">
-    <!-- <wtm-nav></wtm-nav> -->
-    <nav class="nav-container">
-      <div class="nav-contents">
-        <h1><a href="/" class="title-logo">WTM</a></h1>
-        <h2>
-          <svg class="nav-icon">
-            <use href="/icons/sprite.svg#icon-group" />
-          </svg>
-        </h2>
-
-        <svg class="nav-icon">
-          <use href="/icons/sprite.svg#icon-add" />
-        </svg>
-        <h2>
-          <a href="/friend-groups/side-questers/index.html">
-            <span class="nav-text">SQ</span>
-          </a>
-        </h2>
-        <h2>
-          <a href="/friend-groups/roomies/index.html">
-            <span class="nav-text">Roomies</span>
-          </a>
-        </h2>
-        <label id="theme-toggle-label">
-          <input type="checkbox" autocomplete="off" />
-          <span class="nav-text">Light mode</span>
-        </label>
-      </div>
-    </nav>
-
+    <wtm-nav></wtm-nav>
     <div class="grid">
       <h1 class="page-header">Welcome back! What's your next move?</h1>
       <div class="card-row">
@@ -97,8 +68,7 @@
         </div>
       </div>
     </div>
-    <script src="/scripts/toggle-mode.js" defer></script>
-    <!-- <script type="module">
+    <script type="module">
       document.body.addEventListener("theme:toggle", (event) => {
         const isChecked = event.detail.checked;
         document.body.classList.toggle("light-mode", isChecked);
@@ -112,6 +82,6 @@
       define({
         "wtm-nav": NavBar,
       });
-    </script> -->
+    </script>
   </body>
 </html>
