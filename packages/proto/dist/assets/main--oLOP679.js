@@ -1,4 +1,8 @@
-import{i as l,x as f,r as h,a as m,d as p,N as v}from"./nav-bar-DOiYJQBw.js";import{n as t}from"./property-BzsnG8ZR.js";document.body.addEventListener("theme:toggle",a=>{const i=a.detail.checked;document.body.classList.toggle("light-mode",i)});var x=Object.defineProperty,o=(a,i,c,g)=>{for(var r=void 0,s=a.length-1,n;s>=0;s--)(n=a[s])&&(r=n(i,c,r)||r);return r&&x(i,c,r),r};const d=class d extends l{constructor(){super(...arguments),this.groupName="",this.members="",this.upcoming="",this.href="",this.plansHref="",this.membersHref=""}render(){return f`<div class="card-container">
+import{i as h,x as d,r as v,a as u,d as g,N as x}from"./nav-bar-DOiYJQBw.js";import{n as s}from"./property-BzsnG8ZR.js";document.body.addEventListener("theme:toggle",o=>{const r=o.detail.checked;document.body.classList.toggle("light-mode",r)});/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */function b(o){return s({...o,state:!0,attribute:!1})}var y=Object.defineProperty,n=(o,r,t,m)=>{for(var e=void 0,i=o.length-1,c;i>=0;i--)(c=o[i])&&(e=c(r,t,e)||e);return e&&y(r,t,e),e};const f=class f extends h{constructor(){super(...arguments),this.groupName="",this.members="",this.upcoming="",this.href="",this.plansHref="",this.membersHref=""}render(){return d`<div class="card-container">
         <a href=${this.href} class="card-colorbox">
         <div class="card-colorbox"></div>
       </a>
@@ -15,7 +19,7 @@ import{i as l,x as f,r as h,a as m,d as p,N as v}from"./nav-bar-DOiYJQBw.js";imp
           <div class="card-textXs">View plans</div>
         </a>
       </div>
-    </div>`}};d.styles=[h.styles,m`
+    </div>`}};f.styles=[v.styles,u`
       .card-container {
         width: 300px; /* fixed width so 3 fit in one row */
         height: 300px; /* fixed height */
@@ -64,4 +68,13 @@ import{i as l,x as f,r as h,a as m,d as p,N as v}from"./nav-bar-DOiYJQBw.js";imp
         font-size: var(--size-font-xs);
         color: var(--color-text-primary);
       }
-    `];let e=d;o([t()],e.prototype,"groupName");o([t()],e.prototype,"members");o([t()],e.prototype,"upcoming");o([t()],e.prototype,"href");o([t({attribute:"plans-href"})],e.prototype,"plansHref");o([t({attribute:"members-href"})],e.prototype,"membersHref");p({"wtm-nav":v,"group-card":e});
+    `];let a=f;n([s()],a.prototype,"groupName");n([s()],a.prototype,"members");n([s()],a.prototype,"upcoming");n([s()],a.prototype,"href");n([s({attribute:"plans-href"})],a.prototype,"plansHref");n([s({attribute:"members-href"})],a.prototype,"membersHref");var $=Object.defineProperty,p=(o,r,t,m)=>{for(var e=void 0,i=o.length-1,c;i>=0;i--)(c=o[i])&&(e=c(r,t,e)||e);return e&&$(r,t,e),e};class l extends h{constructor(){super(...arguments),this.groups=[]}connectedCallback(){super.connectedCallback(),this.src&&this.hydrate(this.src)}hydrate(r){fetch(r).then(t=>{if(!t.ok)throw new Error(`Failed to load ${r}`);return t.json()}).then(t=>{this.groups=t}).catch(t=>{console.error(t)})}renderGroup(r){return d`
+      <group-card
+        groupName=${r.groupName}
+        members=${r.members}
+        upcoming=${r.upcoming}
+        href=${r.href}
+        plans-href=${r.plansHref}
+        members-href=${r.membersHref}
+      ></group-card>
+    `}render(){return d`<section>${this.groups.map(this.renderGroup)}</section>`}}p([s()],l.prototype,"src");p([b()],l.prototype,"groups");g({"wtm-nav":x,"group-card":a,"wtm-group-list":l});
