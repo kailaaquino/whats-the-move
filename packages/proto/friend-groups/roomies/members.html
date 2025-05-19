@@ -30,9 +30,8 @@
 
       <main>
         <section class="members">
-          <member-card firstName="Kaila" lastName="Aquino"></member-card>
-          <member-card firstName="Ashley" lastName="Brown"></member-card>
-          <member-card firstName="Dom" lastName="Lee"></member-card>
+          <member-list src="/data/members.json"></member-list>
+
         </section>
       </main>
     </div>
@@ -42,6 +41,7 @@
       import { NavBar } from "/src/nav-bar.js";
       import { MemberCircle } from "/src/member-circle.js";
       import { MemberCard } from "/src/member-card.js";
+      import { MemberList } from "/src/member-List.js";
       import { FriendNav } from "/src/friend-nav.js";
 
       define({
@@ -50,6 +50,8 @@
         "friend-nav": FriendNav,
         "member-circle": MemberCircle,
         "member-card": MemberCard,
+        "member-list": MemberList,
+
       });
     </script>
   </body>
