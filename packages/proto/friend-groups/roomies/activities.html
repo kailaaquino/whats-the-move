@@ -31,12 +31,25 @@
       <main>
         <section class="activities">
           <activity-card></activity-card>
-          <h3>Activities</h3>
-          <ul>
-            <li>Taco Tuesday</li>
-            <li>Hike Bishop Peak</li>
-            <li>Bowling</li>
-          </ul>
+
+          <activity-card
+            activityName="Escape Room"
+            activityLocation="Puzzle Effect SLO"
+            notes="Notes: N/A"
+          ></activity-card>
+
+          <activity-card
+            activityName="Kayaking"
+            activityLocation="Morro Bay"
+            notes="Notes: On a sunny day!"
+          ></activity-card>
+
+          <activity-card
+            activityName="Karaoke Night"
+            activityLocation="@ someones house"
+            notes="Notes: N/A"
+          ></activity-card>
+          
         </section>
       </main>
     </div>
@@ -44,12 +57,12 @@
       import { define } from "@calpoly/mustang";
       import { NavBar } from "/src/nav-bar.js";
       import { FriendNav } from "/src/friend-nav.js";
-      import {ActivityCard} from "/src/activity-card.js"
+      import { ActivityCard } from "/src/activity-card.js";
 
       define({
         "wtm-nav": NavBar,
         "friend-nav": FriendNav,
-        "activity-card": ActivityCard
+        "activity-card": ActivityCard,
       });
     </script>
   </body>
