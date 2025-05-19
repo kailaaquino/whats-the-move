@@ -28,44 +28,8 @@
         <friend-nav activeTab="Plans"></friend-nav>
       </div>
 
-      <div class="card-row">
-        <plan-card
-          activity="Bonfire @ Grover Beach"
-          date="Saturday 05/17/2025"
-          going="A,B,C"
-          notes="Meet at 5pm! Bring blankets"
-          ></plan-card>
-          <plan-card
-          activity="Bonfire @ Grover Beach"
-          date="Saturday 05/17/2025"
-          going="A, B, C"
-          notes="Meet at 5pm! Bring blankets"
-          ></plan-card>
-          <plan-card
-          activity="Bonfire @ Grover Beach"
-          date="Saturday 05/17/2025"
-          going="A, B, C"
-          notes="Meet at 5pm! Bring blankets"
-          ></plan-card>
-          <plan-card
-          activity="Bonfire @ Grover Beach"
-          date="Saturday 05/17/2025"
-          going="A, B, C"
-          notes="Meet at 5pm! Bring blankets"
-          ></plan-card>
-          <plan-card
-          activity="Bonfire @ Grover Beach"
-          date="Saturday 05/17/2025"
-          going="A, B, C"
-          notes="Meet at 5pm! Bring blankets"
-          ></plan-card>
-          <plan-card
-          activity="Bonfire @ Grover Beach"
-          date="Saturday 05/17/2025"
-          going="A, B, C"
-          notes="Meet at 5pm! Bring blankets"
-          ></plan-card>
-      </div>
+      <plan-list src="/data/plans.json"></plan-list>
+
     </div>
     <!-- <script src="public/scripts/toggle-mode.js" defer></script> -->
 
@@ -82,7 +46,8 @@
       import { NavBar } from "/src/nav-bar.js";
       import { FriendNav } from "/src/friend-nav.js";
       import { PlanCard } from "/src/plan-card.js";
-      import {AvatarCircle} from "/src/avatar-circle.js"
+      import { AvatarCircle } from "/src/avatar-circle.js";
+      import { PlanList } from "/src/plan-list.js";
 
       define({
         "action-card": ActionCard,
@@ -90,6 +55,7 @@
         "friend-nav": FriendNav,
         "plan-card": PlanCard,
         "avatar-circle": AvatarCircle,
+        "plan-list": PlanList,
       });
     </script>
   </body>

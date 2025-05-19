@@ -2,8 +2,10 @@ import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import reset from "./styles/reset.css.ts";
 
+/* Individual plan card component */
 export class PlanCard extends LitElement {
   @property() activity = "";
+  @property() location = "";
   @property() date = "";
   @property() going = "";
   @property() notes = "";
