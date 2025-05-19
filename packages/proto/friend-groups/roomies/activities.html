@@ -30,26 +30,8 @@
 
       <main>
         <section class="activities">
-          <activity-card></activity-card>
+          <activity-list src="/data/activities.json"></activity-list>
 
-          <activity-card
-            activityName="Escape Room"
-            activityLocation="Puzzle Effect SLO"
-            notes="Notes: N/A"
-          ></activity-card>
-
-          <activity-card
-            activityName="Kayaking"
-            activityLocation="Morro Bay"
-            notes="Notes: On a sunny day!"
-          ></activity-card>
-
-          <activity-card
-            activityName="Karaoke Night"
-            activityLocation="@ someones house"
-            notes="Notes: N/A"
-          ></activity-card>
-          
         </section>
       </main>
     </div>
@@ -58,11 +40,13 @@
       import { NavBar } from "/src/nav-bar.js";
       import { FriendNav } from "/src/friend-nav.js";
       import { ActivityCard } from "/src/activity-card.js";
+      import { ActivityList } from "/src/activity-list.js";
 
       define({
         "wtm-nav": NavBar,
         "friend-nav": FriendNav,
         "activity-card": ActivityCard,
+        "activity-list": ActivityList,
       });
     </script>
   </body>

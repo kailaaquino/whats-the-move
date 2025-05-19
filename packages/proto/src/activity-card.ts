@@ -3,16 +3,16 @@ import { property } from "lit/decorators.js";
 import reset from "./styles/reset.css.ts";
 
 export class ActivityCard extends LitElement {
-  @property() activityName = "Add Activity";
-  @property() activityLocation = "";
+  @property() activity = "Add Activity";
+  @property() location = "";
   @property() notes = "";
 
 
   override render() {
     return html`
       <div class="card-container">
-        <span class="activity-text">${this.activityName}</span>
-        <span class="activity-text">${this.activityLocation}</span>
+        <span class="activity-text">${this.activity}</span>
+        <span class="activity-text">${this.location}</span>
         <span class="notes">${this.notes}</span>
       </div>
     `;
