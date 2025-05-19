@@ -5,7 +5,7 @@ import reset from "./styles/reset.css.ts";
 export class FriendNav extends LitElement {
   @property({ type: String }) activeTab = "Plans";
 
-  tabs = ["Create", "Plans", "Activities", "Availabilities", "Members"];
+  tabs = ["Create", "Plans", "Activities", "Availability", "Members"];
 
   override render() {
     return html`
