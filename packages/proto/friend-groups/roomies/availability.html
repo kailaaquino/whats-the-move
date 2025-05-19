@@ -22,17 +22,16 @@
   <body class="page">
     <wtm-nav></wtm-nav>
 
-    <div class="grid">
-      <a href="index.html" class="page-header">Roomies</a>
+    <div class="page-grid">
+      <div class="page-header-grid">
+        <a href="index.html" class="page-header">Roomies</a>
+        <friend-nav activeTab="Availability"></friend-nav>
+      </div>
 
       <main>
         <section class="availability">
-          <h3>Availability</h3>
-          <ul>
-            <li>Ashley: April 12, 2025</li>
-            <li>Dom: April 14, 2025</li>
-            <li>Kaila: April 17, 2025</li>
-          </ul>
+          <availability-list src="/data/availability.json"></availability-list>
+
         </section>
       </main>
     </div>
@@ -40,13 +39,18 @@
       import { define } from "@calpoly/mustang";
       import { ActionCard } from "/src/action-card.js";
       import { NavBar } from "/src/nav-bar.js";
+      import { FriendNav } from "/src/friend-nav.js";
+      import { AvailabilityCard } from "/src/availability-card.js";
+      import {AvailabilityList} from "/src/availability-list.js"
 
       define({
         "action-card": ActionCard,
         "wtm-nav": NavBar,
+        "friend-nav": FriendNav,
+        "availability-card": AvailabilityCard,
+        "availability-list": AvailabilityList,
+
       });
     </script>
   </body>
 </html>
-
-           

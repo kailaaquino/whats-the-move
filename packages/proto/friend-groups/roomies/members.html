@@ -22,17 +22,16 @@
   <body class="page">
     <wtm-nav></wtm-nav>
 
-    <div class="grid">
-      <a href="index.html" class="page-header">Roomies</a>
+    <div class="page-grid">
+      <div class="page-header-grid">
+        <a href="index.html" class="page-header">Roomies</a>
+        <friend-nav activeTab="Members"></friend-nav>
+      </div>
 
       <main>
-        <section class="availability">
-          <h3>Members</h3>
-          <ul>
-            <li>Ashley</li>
-            <li>Dom</li>
-            <li>Kaila</li>
-          </ul>
+        <section class="members">
+          <member-list src="/data/members.json"></member-list>
+
         </section>
       </main>
     </div>
@@ -40,10 +39,19 @@
       import { define } from "@calpoly/mustang";
       import { ActionCard } from "/src/action-card.js";
       import { NavBar } from "/src/nav-bar.js";
+      import { MemberCircle } from "/src/member-circle.js";
+      import { MemberCard } from "/src/member-card.js";
+      import { MemberList } from "/src/member-List.js";
+      import { FriendNav } from "/src/friend-nav.js";
 
       define({
         "action-card": ActionCard,
         "wtm-nav": NavBar,
+        "friend-nav": FriendNav,
+        "member-circle": MemberCircle,
+        "member-card": MemberCard,
+        "member-list": MemberList,
+
       });
     </script>
   </body>
