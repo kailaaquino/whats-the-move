@@ -22,8 +22,12 @@
   <body class="page">
     <wtm-nav></wtm-nav>
 
-    <div class="grid">
-      <h1 class="page-header">Roomies</h1>
+    <div class="page-grid">
+      <div class="page-header-grid">
+        <h1 class="page-header">Roomies</h1>
+        <friend-nav activeTab="Plans"></friend-nav>
+      </div>
+
       <div class="card-row">
         <action-card href="create_plan.html" label="Create Plan"
           >Create Plan</action-card
@@ -50,10 +54,12 @@
       import { define } from "@calpoly/mustang";
       import { ActionCard } from "/src/action-card.js";
       import { NavBar } from "/src/nav-bar.js";
+      import { FriendNav } from "/src/friend-nav.js";
 
       define({
         "action-card": ActionCard,
         "wtm-nav": NavBar,
+        "friend-nav": FriendNav,
       });
     </script>
   </body>

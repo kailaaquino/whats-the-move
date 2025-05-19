@@ -53,6 +53,23 @@ a {
   gap: var(--space-sm);
 }
 
+.page-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.page-header-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+  align-self: stretch;
+  width: "100%"
+
+}
+
 .page-header {
   font-family: var(--font-title);
   font-weight: bold;
