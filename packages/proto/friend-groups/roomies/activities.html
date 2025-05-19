@@ -22,12 +22,15 @@
   <body class="page">
     <wtm-nav></wtm-nav>
 
-
-    <div class="grid">
-      <a href="index.html" class="page-header">Roomies</a>
+    <div class="page-grid">
+      <div class="page-header-grid">
+        <a href="index.html" class="page-header">Roomies</a>
+        <friend-nav activeTab="Plans"></friend-nav>
+      </div>
 
       <main>
         <section class="activities">
+          <activity-card></activity-card>
           <h3>Activities</h3>
           <ul>
             <li>Taco Tuesday</li>
@@ -40,9 +43,13 @@
     <script type="module">
       import { define } from "@calpoly/mustang";
       import { NavBar } from "/src/nav-bar.js";
+      import { FriendNav } from "/src/friend-nav.js";
+      import {ActivityCard} from "/src/activity-card.js"
 
       define({
         "wtm-nav": NavBar,
+        "friend-nav": FriendNav,
+        "activity-card": ActivityCard
       });
     </script>
   </body>
