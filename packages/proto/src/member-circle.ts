@@ -2,7 +2,7 @@ import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import reset from "./styles/reset.css.ts";
 
-/* Used for members page */
+/* Used for members page only*/
 export class MemberCircle extends LitElement {
   @property() initial = "";
 
@@ -25,7 +25,7 @@ export class MemberCircle extends LitElement {
         background-color: var(--color-text-primary);
         color: var(--color-bg-dark);
         border-radius: 31px;
-        background: #f0f0f0;
+        background: var(--color-text-primary);
         font-family: var(--font-body);
       }
     `,

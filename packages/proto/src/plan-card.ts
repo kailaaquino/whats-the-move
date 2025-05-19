@@ -7,13 +7,27 @@ export class PlanCard extends LitElement {
   @property() date = "";
   @property() going = "";
   @property() notes = "";
+  get goingList() {
+    return this.going
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
 
   override render() {
     return html`
       <div class="card-container">
         <span class="activity">${this.activity}</span>
         <span class="date">${this.date}</span>
-        <span class="going"> Going: ${this.going} </span>
+        <div class="going">
+          <span>Going:</span>
+          <div class="avatar-list">
+            ${this.goingList.map(
+              (initial) =>
+                html`<avatar-circle .initial=${initial}></avatar-circle>`
+            )}
+          </div>
+        </div>
         <span class="notes"> Notes: ${this.notes}</span>
       </div>
     `;
@@ -29,7 +43,7 @@ export class PlanCard extends LitElement {
         padding: 16px;
         flex-direction: column;
         align-items: flex-start;
-        gap: 36px;
+        gap: 24px;
         background-color: var(--color-bg-nav);
         border-radius: 16px;
       }
@@ -53,6 +67,12 @@ export class PlanCard extends LitElement {
         font-family: var(--font-body);
         font-size: var(--size-font-sm);
         margin: 0;
+        overflow: hidden;
+      }
+      .avatar-list {
+        display: flex;
+        align-items: center;
+        gap: 8.054px;
       }
     `,
   ];
