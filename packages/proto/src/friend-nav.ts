@@ -39,6 +39,7 @@ export class FriendNav extends LitElement {
         gap: 2rem;
         align-self: stretch;
         justify-content: flex-start;
+        margin: 16px
       }
 
       .friendbar-link {
