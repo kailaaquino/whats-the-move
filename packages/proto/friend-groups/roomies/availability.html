@@ -30,39 +30,7 @@
 
       <main>
         <section class="availability">
-
-          <availability-card
-          ></availability-card>
-
-          <availability-card
-            memberName="Kaila"
-            date="May 21, 2025"
-          ></availability-card>
-
-          <availability-card
-            memberName="Ashley"
-            date="May 21, 2025"
-          ></availability-card>
-
-          <availability-card
-          memberName="Dom"
-          date="May 23, 2025"
-          ></availability-card>
-
-          <availability-card
-            memberName="Kaila"
-            date="May 25, 2025"
-          ></availability-card>
-
-          <availability-card
-            memberName="Kaila"
-            date="May 26, 2025"
-          ></availability-card>
-
-          <availability-card
-            memberName="Ashley"
-            date="May 27, 2025"
-          ></availability-card>
+          <availability-list src="/data/availability.json"></availability-list>
 
         </section>
       </main>
@@ -73,12 +41,15 @@
       import { NavBar } from "/src/nav-bar.js";
       import { FriendNav } from "/src/friend-nav.js";
       import { AvailabilityCard } from "/src/availability-card.js";
+      import {AvailabilityList} from "/src/availability-list.js"
 
       define({
         "action-card": ActionCard,
         "wtm-nav": NavBar,
         "friend-nav": FriendNav,
         "availability-card": AvailabilityCard,
+        "availability-list": AvailabilityList,
+
       });
     </script>
   </body>
