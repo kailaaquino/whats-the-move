@@ -5,18 +5,25 @@ import reset from "./styles/reset.css.ts";
 export class FriendNav extends LitElement {
   @property({ type: String }) activeTab = "Plans";
 
-  tabs = ["Create", "Plans", "Activities", "Availability", "Members"];
-
+  tabLinks = [
+    { name: "Create", href: "create_plan.html" },
+    { name: "Plans", href: "index.html" },
+    { name: "Activities", href: "activities.html" },
+    { name: "Availability", href: "availability.html" },
+    { name: "Members", href: "members.html" },
+  ];
   override render() {
     return html`
       <nav class="friendbar">
-        ${this.tabs.map(
+        ${this.tabLinks.map(
           (tab) => html`
             <a
-              class="friendbar-link ${this.activeTab === tab ? "active" : ""}"
-              href="${tab.toLowerCase()}"
+              class="friendbar-link ${this.activeTab === tab.name
+                ? "active"
+                : ""}"
+              href="${tab.href}"
             >
-              ${tab}
+              ${tab.name}
             </a>
           `
         )}
@@ -44,7 +51,7 @@ export class FriendNav extends LitElement {
       }
 
       .friendbar-link.active {
-        border: var(--color-text-primary);
+        border: 1px solid var(--color-text-primary);
       }
     `,
   ];
