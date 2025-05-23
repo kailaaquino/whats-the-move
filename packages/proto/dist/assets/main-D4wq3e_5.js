@@ -1,8 +1,4 @@
-import{i as h,x as d,r as v,a as u,d as g,N as x}from"./nav-bar-DOiYJQBw.js";import{n as s}from"./property-BzsnG8ZR.js";document.body.addEventListener("theme:toggle",o=>{const r=o.detail.checked;document.body.classList.toggle("light-mode",r)});/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */function b(o){return s({...o,state:!0,attribute:!1})}var y=Object.defineProperty,n=(o,r,t,m)=>{for(var e=void 0,i=o.length-1,c;i>=0;i--)(c=o[i])&&(e=c(r,t,e)||e);return e&&y(r,t,e),e};const f=class f extends h{constructor(){super(...arguments),this.groupName="",this.members="",this.upcoming="",this.href="",this.plansHref="",this.membersHref=""}render(){return d`<div class="card-container">
+import{i as p,x as l,r as m,a as v,n as i,d as x,N as y}from"./property-CrkbdDop.js";import{r as b}from"./state-DMDvs1Jn.js";document.body.addEventListener("theme:toggle",s=>{const r=s.detail.checked;document.body.classList.toggle("light-mode",r)});var w=Object.defineProperty,n=(s,r,t,u)=>{for(var e=void 0,a=s.length-1,c;a>=0;a--)(c=s[a])&&(e=c(r,t,e)||e);return e&&w(r,t,e),e};const f=class f extends p{constructor(){super(...arguments),this.groupName="",this.members="",this.upcoming="",this.href="",this.plansHref="",this.membersHref=""}render(){return l`<div class="card-container">
         <a href=${this.href} class="card-colorbox">
         <div class="card-colorbox"></div>
       </a>
@@ -19,7 +15,7 @@ import{i as h,x as d,r as v,a as u,d as g,N as x}from"./nav-bar-DOiYJQBw.js";imp
           <div class="card-textXs">View plans</div>
         </a>
       </div>
-    </div>`}};f.styles=[v.styles,u`
+    </div>`}};f.styles=[m.styles,v`
       .card-container {
         width: 300px; /* fixed width so 3 fit in one row */
         height: 300px; /* fixed height */
@@ -68,7 +64,7 @@ import{i as h,x as d,r as v,a as u,d as g,N as x}from"./nav-bar-DOiYJQBw.js";imp
         font-size: var(--size-font-xs);
         color: var(--color-text-primary);
       }
-    `];let a=f;n([s()],a.prototype,"groupName");n([s()],a.prototype,"members");n([s()],a.prototype,"upcoming");n([s()],a.prototype,"href");n([s({attribute:"plans-href"})],a.prototype,"plansHref");n([s({attribute:"members-href"})],a.prototype,"membersHref");var $=Object.defineProperty,p=(o,r,t,m)=>{for(var e=void 0,i=o.length-1,c;i>=0;i--)(c=o[i])&&(e=c(r,t,e)||e);return e&&$(r,t,e),e};class l extends h{constructor(){super(...arguments),this.groups=[]}connectedCallback(){super.connectedCallback(),this.src&&this.hydrate(this.src)}hydrate(r){fetch(r).then(t=>{if(!t.ok)throw new Error(`Failed to load ${r}`);return t.json()}).then(t=>{this.groups=t}).catch(t=>{console.error(t)})}renderGroup(r){return d`
+    `];let o=f;n([i()],o.prototype,"groupName");n([i()],o.prototype,"members");n([i()],o.prototype,"upcoming");n([i()],o.prototype,"href");n([i({attribute:"plans-href"})],o.prototype,"plansHref");n([i({attribute:"members-href"})],o.prototype,"membersHref");var $=Object.defineProperty,g=(s,r,t,u)=>{for(var e=void 0,a=s.length-1,c;a>=0;a--)(c=s[a])&&(e=c(r,t,e)||e);return e&&$(r,t,e),e};const h=class h extends p{constructor(){super(...arguments),this.groups=[]}connectedCallback(){super.connectedCallback(),this.src&&this.hydrate(this.src)}hydrate(r){fetch(r).then(t=>{if(!t.ok)throw new Error(`Failed to load ${r}`);return t.json()}).then(t=>{this.groups=t}).catch(t=>{console.error(t)})}renderGroup(r){return l`
       <group-card
         groupName=${r.groupName}
         members=${r.members}
@@ -77,4 +73,13 @@ import{i as h,x as d,r as v,a as u,d as g,N as x}from"./nav-bar-DOiYJQBw.js";imp
         plans-href=${r.plansHref}
         members-href=${r.membersHref}
       ></group-card>
-    `}render(){return d`<section>${this.groups.map(this.renderGroup)}</section>`}}p([s()],l.prototype,"src");p([b()],l.prototype,"groups");g({"wtm-nav":x,"group-card":a,"wtm-group-list":l});
+    `}render(){return l`<div class="card-row">
+      ${this.groups.length>0?this.groups.map(this.renderGroup):l`<p class="empty-state">No groups to show yet.</p>`}
+    </div>`}};h.styles=[m.styles,v`
+      .card-row {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-md);
+        flex-wrap: wrap;
+      }
+    `];let d=h;g([i()],d.prototype,"src");g([b()],d.prototype,"groups");x({"wtm-nav":y,"group-card":o,"wtm-group-list":d});

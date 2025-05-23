@@ -17,30 +17,28 @@
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/group-page.css" />
-    <script type="module" crossorigin src="/assets/roomiesAvailability-B_Ctml_q.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/nav-bar-DOiYJQBw.js">
-    <link rel="modulepreload" crossorigin href="/assets/property-BzsnG8ZR.js">
-    <link rel="modulepreload" crossorigin href="/assets/action-card-C1Jwkzor.js">
+    <script type="module" crossorigin src="/assets/roomiesAvailability-Dv_Tuclt.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/property-CrkbdDop.js">
+    <link rel="modulepreload" crossorigin href="/assets/action-card-CvR8T3Kc.js">
+    <link rel="modulepreload" crossorigin href="/assets/friend-nav-Md6TDvGx.js">
+    <link rel="modulepreload" crossorigin href="/assets/state-DMDvs1Jn.js">
   </head>
 
   <body class="page">
     <wtm-nav></wtm-nav>
 
-    <div class="grid">
-      <a href="index.html" class="page-header">Roomies</a>
+    <div class="page-grid">
+      <div class="page-header-grid">
+        <a href="index.html" class="page-header">Roomies</a>
+        <friend-nav activeTab="Availability"></friend-nav>
+      </div>
 
       <main>
         <section class="availability">
-          <h3>Availability</h3>
-          <ul>
-            <li>Ashley: April 12, 2025</li>
-            <li>Dom: April 14, 2025</li>
-            <li>Kaila: April 17, 2025</li>
-          </ul>
+          <availability-list src="/data/availability.json"></availability-list>
+
         </section>
       </main>
     </div>
   </body>
 </html>
-
-           

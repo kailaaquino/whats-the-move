@@ -1,0 +1,1 @@
+import{d,N as o}from"./property-CrkbdDop.js";import{A as a}from"./action-card-CvR8T3Kc.js";document.body.addEventListener("theme:toggle",e=>{const t=e.detail.checked;document.body.classList.toggle("light-mode",t)});d({"action-card":a,"wtm-nav":o});

@@ -1,4 +1,4 @@
-import{i as p,x as c,r as d,a as v}from"./nav-bar-DOiYJQBw.js";import{n}from"./property-BzsnG8ZR.js";var h=Object.defineProperty,f=(s,a,i,u)=>{for(var r=void 0,t=s.length-1,l;t>=0;t--)(l=s[t])&&(r=l(a,i,r)||r);return r&&h(a,i,r),r};const o=class o extends p{constructor(){super(...arguments),this.href="",this.label=""}render(){return c`
+import{i as f,x as p,r as d,a as v,n}from"./property-CrkbdDop.js";var h=Object.defineProperty,c=(s,a,i,u)=>{for(var e=void 0,t=s.length-1,l;t>=0;t--)(l=s[t])&&(e=l(a,i,e)||e);return e&&h(a,i,e),e};const o=class o extends f{constructor(){super(...arguments),this.href="",this.label=""}render(){return p`
       <div class="group-container">
         <a href=${this.href} class="group-title">
           <slot>${this.label}</slot>
@@ -24,4 +24,4 @@ import{i as p,x as c,r as d,a as v}from"./nav-bar-DOiYJQBw.js";import{n}from"./p
         text-align: center;
         color: var(--color-text-primary);
       }
-    `];let e=o;f([n()],e.prototype,"href");f([n()],e.prototype,"label");export{e as A};
+    `];let r=o;c([n()],r.prototype,"href");c([n()],r.prototype,"label");export{r as A};
