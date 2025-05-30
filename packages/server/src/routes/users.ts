@@ -32,4 +32,17 @@ router.post("/", (req: Request, res: Response) => {
     .catch((err) => res.status(500).send(err));
 });
 
+// PUT user updates
+router.put("/:id", (req: Request, res: Response) => {
+  const { id } = req.params;
+  const newUser = req.body;
+
+  Users.update(id, newUser)
+    .then((user) => res.json(user))
+    .catch((err) => {
+      console.error(err);
+      res.status(404).send("Update failed");
+    });
+});
+
 export default router;

@@ -48,4 +48,12 @@ router.post("/", (req, res) => {
   const newUser = req.body;
   import_user_svc.default.create(newUser).then((user) => res.status(201).json(user)).catch((err) => res.status(500).send(err));
 });
+router.put("/:id", (req, res) => {
+  const { id } = req.params;
+  const newUser = req.body;
+  import_user_svc.default.update(id, newUser).then((user) => res.json(user)).catch((err) => {
+    console.error(err);
+    res.status(404).send("Update failed");
+  });
+});
 var users_default = router;

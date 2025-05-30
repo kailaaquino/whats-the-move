@@ -21,10 +21,20 @@ function get(id: string): Promise<User | null> {
   return UserModel.findById(id).exec();
 }
 
-// Insert new user 
+// Insert new user
 function create(json: User): Promise<User> {
   const u = new UserModel(json);
   return u.save();
 }
 
-export default {index, get, create};
+// Update
+function update(id: string, user: User): Promise<User> {
+  return UserModel.findByIdAndUpdate(id, user, { new: true })
+    .exec()
+    .then((updated) => {
+      if (!updated) throw new Error(`${id} not updated`);
+      return updated as User;
+    });
+}
+
+export default { index, get, create, update };

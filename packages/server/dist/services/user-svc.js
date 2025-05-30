@@ -41,4 +41,10 @@ function create(json) {
   const u = new UserModel(json);
   return u.save();
 }
-var user_svc_default = { index, get, create };
+function update(id, user) {
+  return UserModel.findByIdAndUpdate(id, user, { new: true }).exec().then((updated) => {
+    if (!updated) throw new Error(`${id} not updated`);
+    return updated;
+  });
+}
+var user_svc_default = { index, get, create, update };
