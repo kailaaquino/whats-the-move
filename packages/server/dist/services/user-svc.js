@@ -47,4 +47,9 @@ function update(id, user) {
     return updated;
   });
 }
-var user_svc_default = { index, get, create, update };
+function remove(id) {
+  return UserModel.findByIdAndDelete(id).then((deleted) => {
+    if (!deleted) throw new Error(`${id} not deleted`);
+  });
+}
+var user_svc_default = { index, get, create, update, remove };

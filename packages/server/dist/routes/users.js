@@ -56,4 +56,8 @@ router.put("/:id", (req, res) => {
     res.status(404).send("Update failed");
   });
 });
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  import_user_svc.default.remove(id).then(() => res.status(204).end()).catch((err) => res.status(404).send(err));
+});
 var users_default = router;

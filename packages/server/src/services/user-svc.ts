@@ -37,4 +37,11 @@ function update(id: string, user: User): Promise<User> {
     });
 }
 
-export default { index, get, create, update };
+// Remove User
+function remove(id: string): Promise<void> {
+  return UserModel.findByIdAndDelete(id).then((deleted) => {
+    if (!deleted) throw new Error(`${id} not deleted`);
+  });
+}
+
+export default { index, get, create, update, remove };

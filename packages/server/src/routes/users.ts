@@ -45,4 +45,13 @@ router.put("/:id", (req: Request, res: Response) => {
     });
 });
 
+// DELETE user
+router.delete("/:id", (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  Users.remove(id)
+    .then(() => res.status(204).end())
+    .catch((err) => res.status(404).send(err));
+});
+
 export default router;
