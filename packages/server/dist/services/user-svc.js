@@ -24,7 +24,6 @@ module.exports = __toCommonJS(user_svc_exports);
 var import_mongoose = require("mongoose");
 const UserSchema = new import_mongoose.Schema(
   {
-    id: { type: String, required: true, trim: true },
     username: { type: String, required: true, unique: true, trim: true },
     firstName: { type: String, required: true, trim: true },
     lastName: { type: String, required: true, trim: true }
@@ -36,8 +35,10 @@ function index() {
   return UserModel.find();
 }
 function get(id) {
-  return UserModel.find({ id }).then((list) => list[0]).catch((err) => {
-    throw `${id} Not Found`;
-  });
+  return UserModel.findById(id).exec();
 }
-var user_svc_default = { index, get };
+function create(json) {
+  const u = new UserModel(json);
+  return u.save();
+}
+var user_svc_default = { index, get, create };

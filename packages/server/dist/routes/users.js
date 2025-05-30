@@ -37,8 +37,15 @@ const router = import_express.default.Router();
 router.get("/", (_, res) => {
   import_user_svc.default.index().then((list) => res.json(list)).catch((err) => res.status(500).send(err));
 });
-router.get("/:userid", (req, res) => {
-  const { userid } = req.params;
-  import_user_svc.default.get(userid).then((user) => res.json(user)).catch((err) => res.status(404).send(err));
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+  import_user_svc.default.get(id).then((user) => {
+    if (user) res.json(user);
+    else res.status(404).send("User not found");
+  }).catch((err) => res.status(500).send(err));
+});
+router.post("/", (req, res) => {
+  const newUser = req.body;
+  import_user_svc.default.create(newUser).then((user) => res.status(201).json(user)).catch((err) => res.status(500).send(err));
 });
 var users_default = router;

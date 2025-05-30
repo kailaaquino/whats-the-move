@@ -1,9 +1,9 @@
+// src/services/user-svc.ts
 import { Schema, model } from "mongoose";
 import { User } from "../models/user";
 
 const UserSchema = new Schema<User>(
   {
-    id: { type: String, required: true, trim: true },
     username: { type: String, required: true, unique: true, trim: true },
     firstName: { type: String, required: true, trim: true },
     lastName: { type: String, required: true, trim: true },
@@ -17,12 +17,14 @@ function index(): Promise<User[]> {
   return UserModel.find();
 }
 
-function get(id: String): Promise<User> {
-  return UserModel.find({ id })
-    .then((list) => list[0])
-    .catch((err) => {
-      throw `${id} Not Found`;
-    });
+function get(id: string): Promise<User | null> {
+  return UserModel.findById(id).exec();
 }
 
-export default {index, get};
+// Insert new user 
+function create(json: User): Promise<User> {
+  const u = new UserModel(json);
+  return u.save();
+}
+
+export default {index, get, create};

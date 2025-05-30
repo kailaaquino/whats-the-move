@@ -1,3 +1,4 @@
+// src/routes/users.ts
 import express, { Request, Response } from "express";
 import { User } from "../models/user";
 
@@ -11,12 +12,24 @@ router.get("/", (_, res: Response) => {
     .catch((err) => res.status(500).send(err));
 });
 
-router.get("/:userid", (req: Request, res: Response) => {
-  const { userid } = req.params;
+router.get("/:id", (req: Request, res: Response) => {
+  const { id } = req.params;
 
-  Users.get(userid)
-    .then((user: User) => res.json(user))
-    .catch((err) => res.status(404).send(err));
+  Users.get(id)
+    .then((user: User | null) => {
+      if (user) res.json(user);
+      else res.status(404).send("User not found");
+    })
+    .catch((err) => res.status(500).send(err));
+});
+
+// POST new user
+router.post("/", (req: Request, res: Response) => {
+  const newUser = req.body;
+
+  Users.create(newUser)
+    .then((user: User) => res.status(201).json(user))
+    .catch((err) => res.status(500).send(err));
 });
 
 export default router;
