@@ -1,4 +1,4 @@
-import{i as f,x as p,r as d,a as v,n}from"./property-CrkbdDop.js";var h=Object.defineProperty,c=(s,a,i,u)=>{for(var e=void 0,t=s.length-1,l;t>=0;t--)(l=s[t])&&(e=l(a,i,e)||e);return e&&h(a,i,e),e};const o=class o extends f{constructor(){super(...arguments),this.href="",this.label=""}render(){return p`
+import{i as f,x as p,r as d,a as v,n}from"./property-BffYu5Uq.js";var h=Object.defineProperty,c=(s,a,i,u)=>{for(var e=void 0,t=s.length-1,l;t>=0;t--)(l=s[t])&&(e=l(a,i,e)||e);return e&&h(a,i,e),e};const o=class o extends f{constructor(){super(...arguments),this.href="",this.label=""}render(){return p`
       <div class="group-container">
         <a href=${this.href} class="group-title">
           <slot>${this.label}</slot>

@@ -1,4 +1,4 @@
-import{i as v,x as l,r as h,a as y,n as c,d as x,N as g}from"./property-CrkbdDop.js";import{F as $}from"./friend-nav-Md6TDvGx.js";import{r as b}from"./state-DMDvs1Jn.js";var _=Object.defineProperty,d=(s,t,i,u)=>{for(var e=void 0,r=s.length-1,n;r>=0;r--)(n=s[r])&&(e=n(t,i,e)||e);return e&&_(t,i,e),e};const f=class f extends v{constructor(){super(...arguments),this.activity="Add Activity",this.location="",this.notes=""}render(){return l`
+import{i as v,x as l,r as h,a as y,n as c,d as x}from"./property-BffYu5Uq.js";import{N as g}from"./nav-bar-dHfWQa5T.js";import{F as $}from"./friend-nav-CZo-G2EN.js";import{r as b}from"./state-BroQ6gKo.js";var _=Object.defineProperty,d=(s,t,i,u)=>{for(var e=void 0,r=s.length-1,n;r>=0;r--)(n=s[r])&&(e=n(t,i,e)||e);return e&&_(t,i,e),e};const f=class f extends v{constructor(){super(...arguments),this.activity="Add Activity",this.location="",this.notes=""}render(){return l`
       <div class="card-container">
         <span class="activity-text">${this.activity}</span>
         <span class="activity-text">${this.location}</span>

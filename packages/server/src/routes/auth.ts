@@ -1,4 +1,4 @@
-// src/routes/auth.js
+// src/routes/auth.ts
 import dotenv from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
@@ -44,6 +44,7 @@ router.post("/login", (req: Request, res: Response) => {
   }
 });
 
+// Helper: generates access token for login/signup
 function generateAccessToken(username: string): Promise<String> {
   return new Promise((resolve, reject) => {
     jwt.sign(
@@ -56,6 +57,26 @@ function generateAccessToken(username: string): Promise<String> {
       }
     );
   });
+}
+
+// Middleware to ensure pages are protected
+export function authenticateUser(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  const authHeader = req.headers["authorization"];
+  //Getting the 2nd part of the auth header (the token)
+  const token = authHeader && authHeader.split(" ")[1];
+
+  if (!token) {
+    res.status(401).end();
+  } else {
+    jwt.verify(token, TOKEN_SECRET, (error, decoded) => {
+      if (decoded) next();
+      else res.status(403).end();
+    });
+  }
 }
 
 export default router;

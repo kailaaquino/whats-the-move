@@ -1,0 +1,1 @@
+import{d as r}from"./property-BffYu5Uq.js";import{A as a}from"./action-card-Dhc-MBPV.js";import{N as o}from"./nav-bar-dHfWQa5T.js";import{F as i}from"./friend-nav-CZo-G2EN.js";r({"action-card":a,"wtm-nav":o,"friend-nav":i});
