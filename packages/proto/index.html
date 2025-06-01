@@ -20,13 +20,16 @@
 
   <body class="page">
     <wtm-nav></wtm-nav>
-    <div class="grid">
+    <div class="page-grid">
+      <!-- <div class="page-header-grid"> -->
+
       <h1 class="page-header">Welcome back! What's your next move?</h1>
       <!-- <div class="card-row"> -->
 
         <wtm-group-list src="/data/groups.json"></wtm-group-list>
 
       <!-- </div> -->
+    <!-- </div> -->
     </div>
     <script type="module">
       document.body.addEventListener("theme:toggle", (event) => {
@@ -37,9 +40,9 @@
 
     <script type="module">
       import { define } from "@calpoly/mustang";
-      import { NavBar } from "/src/nav-bar.js";
-      import { GroupCard } from "/src/group-card.ts";
-      import { GroupList } from "/src/group-list.ts";
+      import { NavBar } from "/src/components/nav-bar.js";
+      import { GroupCard } from "/src/components/group-card.ts";
+      import { GroupList } from "/src/components/group-list.ts";
 
       define({
         "wtm-nav": NavBar,

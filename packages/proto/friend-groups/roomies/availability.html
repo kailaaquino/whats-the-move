@@ -31,25 +31,21 @@
       <main>
         <section class="availability">
           <availability-list src="/data/availability.json"></availability-list>
-
         </section>
       </main>
     </div>
     <script type="module">
       import { define } from "@calpoly/mustang";
-      import { ActionCard } from "/src/action-card.js";
-      import { NavBar } from "/src/nav-bar.js";
-      import { FriendNav } from "/src/friend-nav.js";
-      import { AvailabilityCard } from "/src/availability-card.js";
-      import {AvailabilityList} from "/src/availability-list.js"
+      import { NavBar } from "/src/components/nav-bar.js";
+      import { FriendNav } from "/src/components/friend-nav.js";
+      import { AvailabilityCard } from "/src/components/availability-card.js";
+      import { AvailabilityList } from "/src/components/availability-list.js";
 
       define({
-        "action-card": ActionCard,
         "wtm-nav": NavBar,
         "friend-nav": FriendNav,
         "availability-card": AvailabilityCard,
         "availability-list": AvailabilityList,
-
       });
     </script>
   </body>

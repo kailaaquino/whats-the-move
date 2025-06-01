@@ -1,0 +1,1 @@
+import{d as o}from"./reset.css-DKZOVmhf.js";import{A as d}from"./action-card-DuggX_ju.js";import{N as a}from"./nav-bar-BFMUx67p.js";import"./property-DdMkXYOi.js";document.body.addEventListener("theme:toggle",t=>{const e=t.detail.checked;document.body.classList.toggle("light-mode",e)});o({"action-card":d,"wtm-nav":a});
