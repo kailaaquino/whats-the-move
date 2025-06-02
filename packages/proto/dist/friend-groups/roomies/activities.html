@@ -17,29 +17,32 @@
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/group-page.css" />
-    <script type="module" crossorigin src="/assets/roomiesActivities--dDzRZxW.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/reset.css-DKZOVmhf.js">
-    <link rel="modulepreload" crossorigin href="/assets/nav-bar-BFMUx67p.js">
-    <link rel="modulepreload" crossorigin href="/assets/property-DdMkXYOi.js">
-    <link rel="modulepreload" crossorigin href="/assets/friend-nav-CmpZ41Qr.js">
-    <link rel="modulepreload" crossorigin href="/assets/state-pgoaCIgN.js">
+
+    <script type="module" crossorigin src="/assets/roomiesActivities-jmdam12d.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/reset.css-GlY_cqLy.js">
+    <link rel="modulepreload" crossorigin href="/assets/nav-bar-B3sAA9Ka.js">
+    <link rel="modulepreload" crossorigin href="/assets/property-BE6-Eo5M.js">
+    <link rel="modulepreload" crossorigin href="/assets/friend-nav-CMvY1LuW.js">
+    <link rel="modulepreload" crossorigin href="/assets/state-_RpdubKC.js">
+    <link rel="modulepreload" crossorigin href="/assets/page-header-CT2ts7P7.js">
   </head>
 
   <body class="page">
-    <wtm-nav></wtm-nav>
+    <mu-auth provides="wtm:auth">
+      <wtm-nav></wtm-nav>
 
-    <div class="page-grid">
-      <div class="page-header-grid">
-        <a href="index.html" class="page-header">Roomies</a>
-        <friend-nav activeTab="Activities"></friend-nav>
+      <div class="page-grid">
+        <div class="page-header-grid">
+          <page-header type="group" group-name="Roomies"></page-header>
+          <friend-nav activeTab="Activities"></friend-nav>
+        </div>
+
+        <main>
+          <section class="activities">
+            <activity-list src="/data/activities.json"></activity-list>
+          </section>
+        </main>
       </div>
-
-      <main>
-        <section class="activities">
-          <activity-list src="/data/activities.json"></activity-list>
-
-        </section>
-      </main>
-    </div>
+    </mu-auth>
   </body>
 </html>

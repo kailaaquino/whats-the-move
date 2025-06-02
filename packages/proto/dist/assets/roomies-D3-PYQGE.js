@@ -1,4 +1,4 @@
-import{i as f,x as d,r as v,a as g,d as b}from"./reset.css-DKZOVmhf.js";import{N as $}from"./nav-bar-BFMUx67p.js";import{F as w}from"./friend-nav-CmpZ41Qr.js";import{n}from"./property-DdMkXYOi.js";import{r as _}from"./state-pgoaCIgN.js";document.body.addEventListener("theme:toggle",a=>{const t=a.detail.checked;document.body.classList.toggle("light-mode",t)});var k=Object.defineProperty,c=(a,t,e,u)=>{for(var i=void 0,r=a.length-1,s;r>=0;r--)(s=a[r])&&(i=s(t,e,i)||i);return i&&k(t,e,i),i};const h=class h extends f{constructor(){super(...arguments),this.activity="",this.location="",this.date="",this.going="",this.notes=""}get goingList(){return this.going.split(",").map(t=>t.trim()).filter(Boolean)}render(){return d`
+import{i as f,x as d,r as v,a as g,d as z,b as _}from"./reset.css-GlY_cqLy.js";import{N as k}from"./nav-bar-B3sAA9Ka.js";import{F as P}from"./friend-nav-CMvY1LuW.js";import{n}from"./property-BE6-Eo5M.js";import{r as j}from"./state-_RpdubKC.js";import{P as $}from"./page-header-CT2ts7P7.js";var N=Object.defineProperty,c=(r,t,i,u)=>{for(var e=void 0,a=r.length-1,s;a>=0;a--)(s=r[a])&&(e=s(t,i,e)||e);return e&&N(t,i,e),e};const h=class h extends f{constructor(){super(...arguments),this.activity="",this.location="",this.date="",this.going="",this.notes=""}get goingList(){return this.going.split(",").map(t=>t.trim()).filter(Boolean)}render(){return d`
       <div class="card-container">
         <span class="activity">${this.activity}</span>
         <span class="date">${this.date}</span>
@@ -49,7 +49,7 @@ import{i as f,x as d,r as v,a as g,d as b}from"./reset.css-DKZOVmhf.js";import{N
         align-items: center;
         gap: 8.054px;
       }
-    `];let o=h;c([n()],o.prototype,"activity");c([n()],o.prototype,"location");c([n()],o.prototype,"date");c([n()],o.prototype,"going");c([n()],o.prototype,"notes");var z=Object.defineProperty,j=(a,t,e,u)=>{for(var i=void 0,r=a.length-1,s;r>=0;r--)(s=a[r])&&(i=s(t,e,i)||i);return i&&z(t,e,i),i};const y=class y extends f{constructor(){super(...arguments),this.initial=""}render(){return d` <div class="circle">${this.initial}</div> `}};y.styles=[v.styles,g`
+    `];let o=h;c([n()],o.prototype,"activity");c([n()],o.prototype,"location");c([n()],o.prototype,"date");c([n()],o.prototype,"going");c([n()],o.prototype,"notes");var O=Object.defineProperty,F=(r,t,i,u)=>{for(var e=void 0,a=r.length-1,s;a>=0;a--)(s=r[a])&&(e=s(t,i,e)||e);return e&&O(t,i,e),e};const m=class m extends f{constructor(){super(...arguments),this.initial=""}render(){return d` <div class="circle">${this.initial}</div> `}};m.styles=[v.styles,g`
       .circle {
         display: flex;
         width: 31.209px;
@@ -64,7 +64,7 @@ import{i as f,x as d,r as v,a as g,d as b}from"./reset.css-DKZOVmhf.js";import{N
         color: var(--color-bg-dark);
         font-family: var(--font-body);
       }
-    `];let p=y;j([n()],p.prototype,"initial");var N=Object.defineProperty,x=(a,t,e,u)=>{for(var i=void 0,r=a.length-1,s;r>=0;r--)(s=a[r])&&(i=s(t,e,i)||i);return i&&N(t,e,i),i};const m=class m extends f{constructor(){super(...arguments),this.plans=[]}connectedCallback(){super.connectedCallback(),this.src&&this.hydrate(this.src)}hydrate(t){fetch(t).then(e=>{if(!e.ok)throw new Error(`Failed to load ${t}`);return e.json()}).then(e=>{this.plans=e}).catch(e=>{console.error(e)})}renderPlan(t){return d`
+    `];let p=m;F([n()],p.prototype,"initial");var B=Object.defineProperty,w=(r,t,i,u)=>{for(var e=void 0,a=r.length-1,s;a>=0;a--)(s=r[a])&&(e=s(t,i,e)||e);return e&&B(t,i,e),e};const y=class y extends f{constructor(){super(...arguments),this.plans=[]}connectedCallback(){super.connectedCallback(),this.src&&this.hydrate(this.src)}hydrate(t){fetch(t).then(i=>{if(!i.ok)throw new Error(`Failed to load ${t}`);return i.json()}).then(i=>{this.plans=i}).catch(i=>{console.error(i)})}renderPlan(t){return d`
       <plan-card
         activity=${t.activity}
         location=${t.location}
@@ -76,11 +76,11 @@ import{i as f,x as d,r as v,a as g,d as b}from"./reset.css-DKZOVmhf.js";import{N
       <div class="card-row">
         ${this.plans.map(t=>this.renderPlan(t))}
       </div>
-    `}};m.styles=[v.styles,g`
+    `}};y.styles=[v.styles,g`
       .card-row {
         display: flex;
         flex-direction: row;
         gap: var(--space-md);
         flex-wrap: wrap;
       }
-    `];let l=m;x([n()],l.prototype,"src");x([_()],l.prototype,"plans");b({"wtm-nav":$,"friend-nav":w,"plan-card":o,"avatar-circle":p,"plan-list":l});
+    `];let l=y;w([n()],l.prototype,"src");w([j()],l.prototype,"plans");z({"wtm-nav":k,"friend-nav":P,"plan-card":o,"avatar-circle":p,"plan-list":l,"page-header":$,"mu-auth":_.Provider});var x,b;(b=(x=$).initializeOnce)==null||b.call(x);document.body.addEventListener("theme:toggle",r=>{const t=r.detail.checked;document.body.classList.toggle("light-mode",t)});

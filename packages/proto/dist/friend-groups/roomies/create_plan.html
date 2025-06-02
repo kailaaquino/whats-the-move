@@ -17,35 +17,40 @@
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/group-page.css" />
-    <script type="module" crossorigin src="/assets/roomiesCreatePlan-D7tmum1w.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/reset.css-DKZOVmhf.js">
-    <link rel="modulepreload" crossorigin href="/assets/nav-bar-BFMUx67p.js">
-    <link rel="modulepreload" crossorigin href="/assets/property-DdMkXYOi.js">
-    <link rel="modulepreload" crossorigin href="/assets/friend-nav-CmpZ41Qr.js">
+
+    <script type="module" crossorigin src="/assets/roomiesCreatePlan-DXk4uZwd.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/reset.css-GlY_cqLy.js">
+    <link rel="modulepreload" crossorigin href="/assets/nav-bar-B3sAA9Ka.js">
+    <link rel="modulepreload" crossorigin href="/assets/property-BE6-Eo5M.js">
+    <link rel="modulepreload" crossorigin href="/assets/friend-nav-CMvY1LuW.js">
+    <link rel="modulepreload" crossorigin href="/assets/state-_RpdubKC.js">
+    <link rel="modulepreload" crossorigin href="/assets/page-header-CT2ts7P7.js">
   </head>
 
   <body class="page">
-    <wtm-nav></wtm-nav>
-    <div class="page-grid">
-      <div class="page-header-grid">
-        <a href="index.html" class="page-header">Roomies</a>
-        <friend-nav activeTab="Create"></friend-nav>
+    <mu-auth provides="wtm:auth">
+      <wtm-nav></wtm-nav>
+      <div class="page-grid">
+        <div class="page-header-grid">
+          <a href="index.html" class="page-header">Roomies</a>
+          <friend-nav activeTab="Create"></friend-nav>
+        </div>
+
+        <main>
+          <section class="create-plan">
+            <h1>Create a plan:</h1>
+            <ol>
+              <li>Pick an activity</li>
+              <li>Pick a date</li>
+              <li>Have friends RSVP!</li>
+            </ol>
+          </section>
+
+          <section class="plans">
+            <h3><a href="index.html">Back to Plans</a></h3>
+          </section>
+        </main>
       </div>
-
-      <main>
-        <section class="create-plan">
-          <h1>Create a plan:</h1>
-          <ol>
-            <li>Pick an activity</li>
-            <li>Pick a date</li>
-            <li>Have friends RSVP!</li>
-          </ol>
-        </section>
-
-        <section class="plans">
-          <h3><a href="index.html">Back to Plans</a></h3>
-        </section>
-      </main>
-    </div>
+    </mu-auth>
   </body>
 </html>

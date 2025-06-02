@@ -1,4 +1,4 @@
-import{i as h,x as l,r as m,a as v,d as x}from"./reset.css-DKZOVmhf.js";import{N as y}from"./nav-bar-BFMUx67p.js";import{n as i}from"./property-DdMkXYOi.js";import{r as b}from"./state-pgoaCIgN.js";document.body.addEventListener("theme:toggle",s=>{const r=s.detail.checked;document.body.classList.toggle("light-mode",r)});var w=Object.defineProperty,n=(s,r,t,u)=>{for(var e=void 0,a=s.length-1,c;a>=0;a--)(c=s[a])&&(e=c(r,t,e)||e);return e&&w(r,t,e),e};const f=class f extends h{constructor(){super(...arguments),this.groupName="",this.members="",this.upcoming="",this.href="",this.plansHref="",this.membersHref=""}render(){return l`<div class="card-container">
+import{i as v,x as l,r as g,a as u,d as w,b as $}from"./reset.css-GlY_cqLy.js";import{N as k}from"./nav-bar-B3sAA9Ka.js";import{n as i}from"./property-BE6-Eo5M.js";import{r as z}from"./state-_RpdubKC.js";import{P as x}from"./page-header-CT2ts7P7.js";var H=Object.defineProperty,n=(o,r,t,y)=>{for(var e=void 0,s=o.length-1,c;s>=0;s--)(c=o[s])&&(e=c(r,t,e)||e);return e&&H(r,t,e),e};const f=class f extends v{constructor(){super(...arguments),this.groupName="",this.members="",this.upcoming="",this.href="",this.plansHref="",this.membersHref=""}render(){return l`<div class="card-container">
         <a href=${this.href} class="card-colorbox">
         <div class="card-colorbox"></div>
       </a>
@@ -15,7 +15,7 @@ import{i as h,x as l,r as m,a as v,d as x}from"./reset.css-DKZOVmhf.js";import{N
           <div class="card-textXs">View plans</div>
         </a>
       </div>
-    </div>`}};f.styles=[m.styles,v`
+    </div>`}};f.styles=[g.styles,u`
       .card-container {
         width: 300px; /* fixed width so 3 fit in one row */
         height: 300px; /* fixed height */
@@ -64,7 +64,7 @@ import{i as h,x as l,r as m,a as v,d as x}from"./reset.css-DKZOVmhf.js";import{N
         font-size: var(--size-font-xs);
         color: var(--color-text-primary);
       }
-    `];let o=f;n([i()],o.prototype,"groupName");n([i()],o.prototype,"members");n([i()],o.prototype,"upcoming");n([i()],o.prototype,"href");n([i({attribute:"plans-href"})],o.prototype,"plansHref");n([i({attribute:"members-href"})],o.prototype,"membersHref");var $=Object.defineProperty,g=(s,r,t,u)=>{for(var e=void 0,a=s.length-1,c;a>=0;a--)(c=s[a])&&(e=c(r,t,e)||e);return e&&$(r,t,e),e};const p=class p extends h{constructor(){super(...arguments),this.groups=[]}connectedCallback(){super.connectedCallback(),this.src&&this.hydrate(this.src)}hydrate(r){fetch(r).then(t=>{if(!t.ok)throw new Error(`Failed to load ${r}`);return t.json()}).then(t=>{this.groups=t}).catch(t=>{console.error(t)})}renderGroup(r){return l`
+    `];let a=f;n([i()],a.prototype,"groupName");n([i()],a.prototype,"members");n([i()],a.prototype,"upcoming");n([i()],a.prototype,"href");n([i({attribute:"plans-href"})],a.prototype,"plansHref");n([i({attribute:"members-href"})],a.prototype,"membersHref");var N=Object.defineProperty,b=(o,r,t,y)=>{for(var e=void 0,s=o.length-1,c;s>=0;s--)(c=o[s])&&(e=c(r,t,e)||e);return e&&N(r,t,e),e};const h=class h extends v{constructor(){super(...arguments),this.groups=[]}connectedCallback(){super.connectedCallback(),this.src&&this.hydrate(this.src)}hydrate(r){fetch(r).then(t=>{if(!t.ok)throw new Error(`Failed to load ${r}`);return t.json()}).then(t=>{this.groups=t}).catch(t=>{console.error(t)})}renderGroup(r){return l`
       <group-card
         groupName=${r.groupName}
         members=${r.members}
@@ -75,11 +75,11 @@ import{i as h,x as l,r as m,a as v,d as x}from"./reset.css-DKZOVmhf.js";import{N
       ></group-card>
     `}render(){return l`<div class="card-row">
       ${this.groups.length>0?this.groups.map(this.renderGroup):l`<p class="empty-state">No groups to show yet.</p>`}
-    </div>`}};p.styles=[m.styles,v`
+    </div>`}};h.styles=[g.styles,u`
       .card-row {
         display: flex;
         flex-direction: row;
         gap: var(--space-md);
         flex-wrap: wrap;
       }
-    `];let d=p;g([i()],d.prototype,"src");g([b()],d.prototype,"groups");x({"wtm-nav":y,"group-card":o,"wtm-group-list":d});
+    `];let d=h;b([i()],d.prototype,"src");b([z()],d.prototype,"groups");w({"wtm-nav":k,"group-card":a,"wtm-group-list":d,"page-header":x,"mu-auth":$.Provider});var p,m;(m=(p=x).initializeOnce)==null||m.call(p);document.body.addEventListener("theme:toggle",o=>{const r=o.detail.checked;document.body.classList.toggle("light-mode",r)});

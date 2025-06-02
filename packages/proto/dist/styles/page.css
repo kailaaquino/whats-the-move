@@ -122,3 +122,7 @@ body {
   color: var(--color-text-primary);
   background-color: var(--color-bg-dark);
 }
+
+mu-auth {
+  display: contents;
+}

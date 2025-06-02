@@ -1,4 +1,4 @@
-import{i as t,e as n,x as s,r,a as i}from"./reset.css-DKZOVmhf.js";const e=class e extends t{render(){return s`<nav class="nav-container">
+import{i as t,e as n,x as s,r,a as i}from"./reset.css-GlY_cqLy.js";const e=class e extends t{render(){return s`<nav class="nav-container">
       <div class="nav-contents">
         <h1><a href="/" class="title-logo">WTM</a></h1>
         <h2>

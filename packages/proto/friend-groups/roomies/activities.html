@@ -17,37 +17,43 @@
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/group-page.css" />
-  </head>
 
-  <body class="page">
-    <wtm-nav></wtm-nav>
-
-    <div class="page-grid">
-      <div class="page-header-grid">
-        <a href="index.html" class="page-header">Roomies</a>
-        <friend-nav activeTab="Activities"></friend-nav>
-      </div>
-
-      <main>
-        <section class="activities">
-          <activity-list src="/data/activities.json"></activity-list>
-
-        </section>
-      </main>
-    </div>
     <script type="module">
-      import { define } from "@calpoly/mustang";
+      import { define, Auth } from "@calpoly/mustang";
       import { NavBar } from "/src/components/nav-bar.js";
       import { FriendNav } from "/src/components/friend-nav.js";
       import { ActivityCard } from "/src/components/activity-card.js";
       import { ActivityList } from "/src/components/activity-list.js";
+      import { PageHeader } from "/src/components/page-header.ts";
 
       define({
         "wtm-nav": NavBar,
         "friend-nav": FriendNav,
         "activity-card": ActivityCard,
         "activity-list": ActivityList,
+        "page-header": PageHeader,
+        "mu-auth": Auth.Provider,
       });
+      PageHeader.initializeOnce?.();
     </script>
+  </head>
+
+  <body class="page">
+    <mu-auth provides="wtm:auth">
+      <wtm-nav></wtm-nav>
+
+      <div class="page-grid">
+        <div class="page-header-grid">
+          <page-header type="group" group-name="Roomies"></page-header>
+          <friend-nav activeTab="Activities"></friend-nav>
+        </div>
+
+        <main>
+          <section class="activities">
+            <activity-list src="/data/activities.json"></activity-list>
+          </section>
+        </main>
+      </div>
+    </mu-auth>
   </body>
 </html>

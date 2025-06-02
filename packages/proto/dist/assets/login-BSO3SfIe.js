@@ -1,4 +1,4 @@
-import{i as l,x as p,r as d,a as f,d as b,b as v}from"./reset.css-DKZOVmhf.js";import{n as u}from"./property-DdMkXYOi.js";import{r as c}from"./state-pgoaCIgN.js";var g=Object.defineProperty,i=(h,r,t,a)=>{for(var e=void 0,o=h.length-1,m;o>=0;o--)(m=h[o])&&(e=m(r,t,e)||e);return e&&g(r,t,e),e};const n=class n extends l{constructor(){super(...arguments),this.formData={},this.redirect="/"}get canSubmit(){return!!(this.api&&this.formData.username&&this.formData.password)}render(){return p`
+import{i as l,x as p,r as d,a as f,d as b,b as v}from"./reset.css-GlY_cqLy.js";import{n as u}from"./property-BE6-Eo5M.js";import{r as c}from"./state-_RpdubKC.js";var g=Object.defineProperty,i=(h,r,t,a)=>{for(var e=void 0,o=h.length-1,m;o>=0;o--)(m=h[o])&&(e=m(r,t,e)||e);return e&&g(r,t,e),e};const n=class n extends l{constructor(){super(...arguments),this.formData={},this.redirect="/"}get canSubmit(){return!!(this.api&&this.formData.username&&this.formData.password)}render(){return p`
       <form
         @change=${r=>this.handleChange(r)}
         @submit=${r=>this.handleSubmit(r)}
