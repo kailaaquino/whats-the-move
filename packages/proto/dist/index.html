@@ -16,21 +16,24 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
-    <script type="module" crossorigin src="/assets/main-D4wq3e_5.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/property-CrkbdDop.js">
-    <link rel="modulepreload" crossorigin href="/assets/state-DMDvs1Jn.js">
+
+    <script type="module" crossorigin src="/assets/main-CARRchAm.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/reset.css-GlY_cqLy.js">
+    <link rel="modulepreload" crossorigin href="/assets/nav-bar-BGzyEcHL.js">
+    <link rel="modulepreload" crossorigin href="/assets/property-BE6-Eo5M.js">
+    <link rel="modulepreload" crossorigin href="/assets/state-_RpdubKC.js">
+    <link rel="modulepreload" crossorigin href="/assets/page-header-CHf9jBse.js">
   </head>
 
   <body class="page">
-    <wtm-nav></wtm-nav>
-    <div class="grid">
-      <h1 class="page-header">Welcome back! What's your next move?</h1>
-      <!-- <div class="card-row"> -->
+    <mu-auth provides="wtm:auth">
+      <wtm-nav></wtm-nav>
 
+      <div class="page-grid">
+        <page-header type="home"></page-header>
         <wtm-group-list src="/data/groups.json"></wtm-group-list>
-
-      <!-- </div> -->
-    </div>
+      </div>
+    </mu-auth>
 
   </body>
 </html>

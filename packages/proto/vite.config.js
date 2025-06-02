@@ -21,6 +21,7 @@ export default defineConfig({
         roomiesCreatePlan: resolve(__dirname, 'friend-groups/roomies/create_plan.html'),
         roomiesMembers: resolve(__dirname, 'friend-groups/roomies/members.html'),
         roomiesPlans: resolve(__dirname, 'friend-groups/roomies/plans.html'),
+        login: resolve(__dirname, 'login.html'),
       },
     },
   },

@@ -26,6 +26,7 @@
   --space-sm: 1rem;
   --space-md: 1.5rem; /* between sections and body */
   --space-lg: 2rem; /* for larger layout separation  */
+  --space-xl: 2.5rem; 
 
   --radius-sm: 8px;
   --radius-md: 12px;

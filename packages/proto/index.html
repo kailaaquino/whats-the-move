@@ -16,35 +16,39 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
-  </head>
-
-  <body class="page">
-    <wtm-nav></wtm-nav>
-    <div class="grid">
-      <h1 class="page-header">Welcome back! What's your next move?</h1>
-      <!-- <div class="card-row"> -->
-
-        <wtm-group-list src="/data/groups.json"></wtm-group-list>
-
-      <!-- </div> -->
-    </div>
-    <script type="module">
-      document.body.addEventListener("theme:toggle", (event) => {
-        const isChecked = event.detail.checked;
-        document.body.classList.toggle("light-mode", isChecked);
-      });
-    </script>
 
     <script type="module">
-      import { define } from "@calpoly/mustang";
-      import { NavBar } from "/src/nav-bar.js";
-      import { GroupCard } from "/src/group-card.ts";
-      import { GroupList } from "/src/group-list.ts";
+      import { define, Auth } from "@calpoly/mustang";
+      import { NavBar } from "/src/components/nav-bar.js";
+      import { GroupCard } from "/src/components/group-card.ts";
+      import { GroupList } from "/src/components/group-list.ts";
+      import { PageHeader } from "/src/components/page-header.ts";
 
       define({
         "wtm-nav": NavBar,
         "group-card": GroupCard,
         "wtm-group-list": GroupList,
+        "page-header": PageHeader,
+        "mu-auth": Auth.Provider,
+      });
+      PageHeader.initializeOnce?.();
+    </script>
+  </head>
+
+  <body class="page">
+    <mu-auth provides="wtm:auth">
+      <wtm-nav></wtm-nav>
+
+      <div class="page-grid">
+        <page-header type="home"></page-header>
+        <wtm-group-list src="/data/groups.json"></wtm-group-list>
+      </div>
+    </mu-auth>
+
+    <script type="module">
+      document.body.addEventListener("theme:toggle", (event) => {
+        const isChecked = event.detail.checked;
+        document.body.classList.toggle("light-mode", isChecked);
       });
     </script>
   </body>

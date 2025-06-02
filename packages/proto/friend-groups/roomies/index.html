@@ -17,45 +17,47 @@
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/group-page.css" />
     <link rel="stylesheet" href="/styles/page.css" />
-  </head>
-
-  <body class="page">
-    <wtm-nav></wtm-nav>
-
-    <div class="page-grid">
-      <div class="page-header-grid">
-        <h1 class="page-header">Roomies</h1>
-        <friend-nav activeTab="Plans"></friend-nav>
-      </div>
-
-      <plan-list src="/data/plans.json"></plan-list>
-
-    </div>
-    <!-- <script src="public/scripts/toggle-mode.js" defer></script> -->
 
     <script type="module">
-      document.body.addEventListener("theme:toggle", (event) => {
-        const isChecked = event.detail.checked;
-        document.body.classList.toggle("light-mode", isChecked);
-      });
-    </script>
-
-    <script type="module">
-      import { define } from "@calpoly/mustang";
-      import { ActionCard } from "/src/action-card.js";
-      import { NavBar } from "/src/nav-bar.js";
-      import { FriendNav } from "/src/friend-nav.js";
-      import { PlanCard } from "/src/plan-card.js";
-      import { AvatarCircle } from "/src/avatar-circle.js";
-      import { PlanList } from "/src/plan-list.js";
+      import { define, Auth } from "@calpoly/mustang";
+      import { NavBar } from "/src/components/nav-bar.js";
+      import { FriendNav } from "/src/components/friend-nav.js";
+      import { PlanCard } from "/src/components/plan-card.js";
+      import { AvatarCircle } from "/src/components/avatar-circle.js";
+      import { PlanList } from "/src/components/plan-list.js";
+      import { PageHeader } from "/src/components/page-header.ts";
 
       define({
-        "action-card": ActionCard,
         "wtm-nav": NavBar,
         "friend-nav": FriendNav,
         "plan-card": PlanCard,
         "avatar-circle": AvatarCircle,
         "plan-list": PlanList,
+        "page-header": PageHeader,
+        "mu-auth": Auth.Provider,
+      });
+      PageHeader.initializeOnce?.();
+    </script>
+  </head>
+
+  <body class="page">
+    <mu-auth provides="wtm:auth">
+      <wtm-nav></wtm-nav>
+
+      <div class="page-grid">
+        <div class="page-header-grid">
+          <page-header type="group" group-name="Roomies"></page-header>
+          <friend-nav activeTab="Plans"></friend-nav>
+        </div>
+
+        <plan-list src="/data/plans.json"></plan-list>
+      </div>
+    </mu-auth>
+
+    <script type="module">
+      document.body.addEventListener("theme:toggle", (event) => {
+        const isChecked = event.detail.checked;
+        document.body.classList.toggle("light-mode", isChecked);
       });
     </script>
   </body>

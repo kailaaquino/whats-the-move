@@ -23,7 +23,7 @@
     <wtm-nav></wtm-nav>
 
     <div class="grid">
-      <a href="index.html" class="page-header">Roomies</a>
+      <page-header type="group" group-name="Roomies"></page-header>
 
       <main>
         <section class="plans">
@@ -40,11 +40,9 @@
     </div>
     <script type="module">
       import { define } from "@calpoly/mustang";
-      import { ActionCard } from "/src/action-card.js";
-      import { NavBar } from "/src/nav-bar.js";
+      import { NavBar } from "/src/components/nav-bar.js";
 
       define({
-        "action-card": ActionCard,
         "wtm-nav": NavBar,
       });
     </script>

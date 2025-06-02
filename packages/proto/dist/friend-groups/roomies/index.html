@@ -17,27 +17,29 @@
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/group-page.css" />
     <link rel="stylesheet" href="/styles/page.css" />
-    <script type="module" crossorigin src="/assets/roomies-BnyTQBSy.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/property-CrkbdDop.js">
-    <link rel="modulepreload" crossorigin href="/assets/action-card-CvR8T3Kc.js">
-    <link rel="modulepreload" crossorigin href="/assets/friend-nav-Md6TDvGx.js">
-    <link rel="modulepreload" crossorigin href="/assets/state-DMDvs1Jn.js">
+
+    <script type="module" crossorigin src="/assets/roomies-CDOuULFx.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/reset.css-GlY_cqLy.js">
+    <link rel="modulepreload" crossorigin href="/assets/nav-bar-BGzyEcHL.js">
+    <link rel="modulepreload" crossorigin href="/assets/property-BE6-Eo5M.js">
+    <link rel="modulepreload" crossorigin href="/assets/friend-nav-CMvY1LuW.js">
+    <link rel="modulepreload" crossorigin href="/assets/state-_RpdubKC.js">
+    <link rel="modulepreload" crossorigin href="/assets/page-header-CHf9jBse.js">
   </head>
 
   <body class="page">
-    <wtm-nav></wtm-nav>
+    <mu-auth provides="wtm:auth">
+      <wtm-nav></wtm-nav>
 
-    <div class="page-grid">
-      <div class="page-header-grid">
-        <h1 class="page-header">Roomies</h1>
-        <friend-nav activeTab="Plans"></friend-nav>
+      <div class="page-grid">
+        <div class="page-header-grid">
+          <page-header type="group" group-name="Roomies"></page-header>
+          <friend-nav activeTab="Plans"></friend-nav>
+        </div>
+
+        <plan-list src="/data/plans.json"></plan-list>
       </div>
-
-      <plan-list src="/data/plans.json"></plan-list>
-
-    </div>
-    <!-- <script src="public/scripts/toggle-mode.js" defer></script> -->
-
+    </mu-auth>
 
   </body>
 </html>
