@@ -3,6 +3,19 @@ import reset from "../styles/reset.css.ts";
 import { Events } from "@calpoly/mustang";
 
 export class NavBar extends LitElement {
+  renderSignOutButton() {
+    return html`
+      <button
+        class="signout-button"
+        @click=${(e: Event) =>
+          Events.relay(e, "auth:message", ["auth/signout"])}
+      >
+        <svg class="nav-icon">
+          <use href="/icons/sprite.svg#icon-signout" />
+        </svg>
+      </button>
+    `;
+  }
   override render() {
     return html`<nav class="nav-container">
       <div class="nav-contents">
@@ -37,6 +50,8 @@ export class NavBar extends LitElement {
           />
           <span class="nav-text">Light mode</span>
         </label>
+
+        ${this.renderSignOutButton()}
       </div>
     </nav>`;
   }
@@ -59,7 +74,7 @@ export class NavBar extends LitElement {
         display: flex;
         flex-direction: column;
         flex-shrink: 0;
-        height: 100%;
+        height: 100vh;
       }
 
       .nav-contents {
@@ -85,6 +100,19 @@ export class NavBar extends LitElement {
       a {
         text-decoration: none;
         color: inherit;
+      }
+
+      .signout-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      }
+      .signout-button .nav-icon {
+        width: 2em;
+        height: 2em;
+        fill: currentColor;
+        color: var(--color-text-primary);
       }
     `,
   ];

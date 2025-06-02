@@ -27,7 +27,7 @@ export class PageHeader extends LitElement {
       <h1 class="page-header">
         ${this.type === "home"
           ? `Welcome back ${this.username}! What’s your next move?`
-          : `${this.groupName}`}
+          : html`<a href="index.html">${this.groupName}</a>`}
       </h1>
     `;
   }
@@ -44,6 +44,14 @@ export class PageHeader extends LitElement {
         width: 100%;
         line-height: 1.1;
         // padding: var(--space-xs) 0;
+      }
+      .page-header a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .page-header a:visited {
+        color: inherit;
       }
     `,
   ];

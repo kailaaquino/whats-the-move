@@ -1,4 +1,13 @@
-import{i as t,e as n,x as s,r,a as i}from"./reset.css-GlY_cqLy.js";const e=class e extends t{render(){return s`<nav class="nav-container">
+import{i as s,e as o,x as n,r as a,a as i}from"./reset.css-GlY_cqLy.js";const t=class t extends s{renderSignOutButton(){return n`
+      <button
+        class="signout-button"
+        @click=${e=>o.relay(e,"auth:message",["auth/signout"])}
+      >
+        <svg class="nav-icon">
+          <use href="/icons/sprite.svg#icon-signout" />
+        </svg>
+      </button>
+    `}render(){return n`<nav class="nav-container">
       <div class="nav-contents">
         <h1><a href="/" class="title-logo">WTM</a></h1>
         <h2>
@@ -24,12 +33,14 @@ import{i as t,e as n,x as s,r,a as i}from"./reset.css-GlY_cqLy.js";const e=class
           <input
             type="checkbox"
             autocomplete="off"
-            @change=${a=>n.relay(a,"theme:toggle",{checked:a.target.checked})}
+            @change=${e=>o.relay(e,"theme:toggle",{checked:e.target.checked})}
           />
           <span class="nav-text">Light mode</span>
         </label>
+
+        ${this.renderSignOutButton()}
       </div>
-    </nav>`}};e.styles=[r.styles,i`
+    </nav>`}};t.styles=[a.styles,i`
       .title-logo {
         font-family: var(--font-logo);
         font-size: var(--size-font-xxl);
@@ -45,7 +56,7 @@ import{i as t,e as n,x as s,r,a as i}from"./reset.css-GlY_cqLy.js";const e=class
         display: flex;
         flex-direction: column;
         flex-shrink: 0;
-        height: 100%;
+        height: 100vh;
       }
 
       .nav-contents {
@@ -72,4 +83,19 @@ import{i as t,e as n,x as s,r,a as i}from"./reset.css-GlY_cqLy.js";const e=class
         text-decoration: none;
         color: inherit;
       }
-    `];let o=e;export{o as N};
+
+      .signout-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      }
+      .signout-button .nav-icon {
+        width: 2em;
+        height: 2em;
+        fill: currentColor;
+        color: var(--color-text-primary);
+        stroke: currentColor;
+        stroke-width: 1.5;
+      }
+    `];let r=t;export{r as N};
