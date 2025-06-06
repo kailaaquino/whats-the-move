@@ -10,9 +10,8 @@ interface GroupData {
   membersHref: string;
 }
 
-export class PlansViewElement extends LitElement {
-  @property({ attribute: "group-id" })
-  groupId: string = "";
+export class ActivitiesViewElement extends LitElement {
+  @property({ attribute: "group-id" }) groupId = "";
 
   @state()
   groupData?: GroupData;
@@ -36,7 +35,6 @@ export class PlansViewElement extends LitElement {
     if (!this.groupData) {
       return html`<p>Loading group info...</p>`;
     }
-
     return html`
       <div class="page-grid">
         <div class="page-header-grid">
@@ -44,11 +42,19 @@ export class PlansViewElement extends LitElement {
             type="group"
             group-name=${this.groupData.groupName}
           ></page-header>
-<friend-nav
+          <friend-nav
             group-id=${this.groupId}
-            activeTab="Plans"
-          ></friend-nav>        </div>
-        <plan-list src="/data/plans-${this.groupId}.json"></plan-list>
+            activeTab="Activities"
+          ></friend-nav>
+        </div>
+
+        <main>
+          <section class="activities">
+            <activity-list
+              src="/data/activities-${this.groupId}.json"
+            ></activity-list>
+          </section>
+        </main>
       </div>
     `;
   }

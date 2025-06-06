@@ -4,29 +4,43 @@ import { reset } from "../../public/styles/reset.css.js";
 
 export class FriendNav extends LitElement {
   @property({ type: String }) activeTab = "Plans";
+  @property({ attribute: "group-id" }) groupId = "";
 
   tabLinks = [
-    { name: "Create", href: "create_plan.html" },
-    { name: "Plans", href: "index.html" },
-    { name: "Activities", href: "activities.html" },
-    { name: "Availability", href: "availability.html" },
-    { name: "Members", href: "members.html" },
+    { name: "Create", path: "create" },
+    { name: "Plans", path: "plans" },
+    { name: "Activities", path: "activities" },
+    { name: "Availabilities", path: "Availabilities" },
+    { name: "Members", path: "Members" },
+
+
   ];
+  handleSpaNavigate(event: MouseEvent) {
+    event.preventDefault();
+    const anchor = event.currentTarget as HTMLAnchorElement;
+    const href = anchor.getAttribute("href");
+    if (href) {
+      history.pushState(null, "", href);
+      window.dispatchEvent(new PopStateEvent("popstate"));
+    }
+  }
   override render() {
     return html`
       <nav class="friendbar">
-        ${this.tabLinks.map(
-          (tab) => html`
+        ${this.tabLinks.map((tab) => {
+          const href = `/app/group/${this.groupId}/${tab.path}`;
+          return html`
             <a
               class="friendbar-link ${this.activeTab === tab.name
                 ? "active"
                 : ""}"
-              href="${tab.href}"
+              href="${href}"
+              @click=${this.handleSpaNavigate}
             >
               ${tab.name}
             </a>
-          `
-        )}
+          `;
+        })}
       </nav>
     `;
   }
@@ -39,7 +53,7 @@ export class FriendNav extends LitElement {
         gap: 2rem;
         align-self: stretch;
         justify-content: flex-start;
-        margin: 16px
+        margin: 16px;
       }
 
       .friendbar-link {
