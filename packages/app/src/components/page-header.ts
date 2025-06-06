@@ -1,5 +1,5 @@
 import { html, css, LitElement } from "lit";
-import { reset } from "../styles/reset.css.js";
+import { reset } from "../../public/styles/reset.css.js";
 import { property, state } from "lit/decorators.js";
 import { Auth, Observer } from "@calpoly/mustang";
 

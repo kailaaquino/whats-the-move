@@ -1,6 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
-import {reset} from "../styles/reset.css.js";
+import { reset } from "../../public/styles/reset.css.js";
 
 interface LoginFormData {
   username?: string;
@@ -50,6 +50,26 @@ export class LoginFormElement extends LitElement {
         color: var(--color-error);
         border: 1px solid var(--color-error);
         padding: var(--size-spacing-medium);
+      }
+      button {
+        background-color: var(--color-bg-dark);
+        color: var(--color-text-primary);
+        font-weight: bold;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover:enabled {
+        background-color: #59deff;
+      }
+
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
       }
     `,
   ];

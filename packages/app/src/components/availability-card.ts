@@ -1,6 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
-import { reset } from "../styles/reset.css.js";
+import { reset } from "../../public/styles/reset.css.js";
 
 export class AvailabilityCard extends LitElement {
   @property() memberName = "Add Availability";

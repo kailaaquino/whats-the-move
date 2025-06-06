@@ -1,5 +1,5 @@
 import { html, css, LitElement } from "lit";
-import { reset } from "../styles/reset.css.js";
+import { reset } from "../../public/styles/reset.css.js";
 import { Events } from "@calpoly/mustang";
 
 export class NavBar extends LitElement {
@@ -39,6 +39,9 @@ export class NavBar extends LitElement {
           <a href="/app/group/roomies/plans">
             <span class="nav-text">Roomies</span>
           </a>
+        </h2>
+        <h2>
+          <a @click=${() => location.assign("/login.html")}>Sign In</a>
         </h2>
         <label id="theme-toggle-label">
           <input

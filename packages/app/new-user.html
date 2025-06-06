@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>What's The Move? | Login</title>
+    <title>What's The Move? | Sign Up</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,25 +37,22 @@
         <p>your friend group’s social planner</p>
       </div>
 
-      <!-- Right panel: login form -->
+      <!-- Right panel: sign-up form -->
       <div class="auth-right">
         <mu-auth>
-          <h2>Log in</h2>
-          <login-form api="/auth/login" redirect="/app">
+          <h2>Create an account</h2>
+          <login-form api="auth/register" redirect="/app">
             <label>
-              <input
-                name="username"
-                placeholder="Username"
-                autocomplete="off"
-              />
+              <input name="username" placeholder="Username" required />
             </label>
             <label>
-              <input name="password" placeholder="Password" type="password" />
+              <input name="password" type="password" placeholder="Password" required />
             </label>
+
           </login-form>
           <div class="auth-footer">
-            Don’t have an account?
-            <a href="/new-user.html">Sign up</a>
+            Already have an account?
+            <a href="/login.html">Log in</a>
           </div>
         </mu-auth>
       </div>

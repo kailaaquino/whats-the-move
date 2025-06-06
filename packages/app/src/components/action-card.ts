@@ -1,6 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
-import { reset } from "../styles/reset.css.js";
+import { reset } from "../../public/styles/reset.css.js";
 
 /* GroupCard components are used within friend groups to represent actions to take */
 export class ActionCard extends LitElement {
