@@ -1,0 +1,20 @@
+[
+  {
+    "groupId": "side-questers",
+    "groupName": "The SideQuesters",
+    "members": "3",
+    "upcoming": "Beach day May 1st, 2025",
+    "href": "/app/group/side-questers/plans",
+    "plansHref": "/app/group/side-questers/plans",
+    "membersHref": "/app/group/side-questers/members"
+  },
+  {
+    "groupId": "roomies",
+    "groupName": "Roomies",
+    "members": "3",
+    "upcoming": "Grad pics May 17th, 2025",
+    "href": "/app/group/roomies/plans",
+    "plansHref": "/app/group/roomies/plans",
+    "membersHref": "/app/group/roomies/members"
+  }
+]
