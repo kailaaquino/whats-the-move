@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>What's The Move?</title>
+
+    <!-- Google Fonts:-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka:wght@400;700&family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+
+    <script type="module" crossorigin src="/assets/main-BAoBcwEX.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/state-Dwv5TFWo.js">
+  </head>
+
+  <body class="page">
+    <mu-history provides="wtm:history">
+      <mu-auth provides="wtm:auth" redirect="/login.html">
+        <article class="page">
+          <wtm-nav></wtm-nav>
+          <mu-switch></mu-switch>
+        </article>
+      </mu-auth>
+    </mu-history>
+
+  </body>
+</html>

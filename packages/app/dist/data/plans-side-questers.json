@@ -1,0 +1,23 @@
+[
+    {
+      "activity": "Bonfire",
+      "location":"Grover Beach" ,
+      "date": "Saturday 06/7/2025",
+      "going": "A,B,C",
+      "notes": "Meet at 5pm! Bring blankets"
+    },
+    {
+      "activity": "Line dancing",
+      "location": "Elks lodge",
+      "date": "Wednesday 06/11/2025",
+      "going": "X,Y,Z",
+      "notes": "Meet at 8pm!"
+    },
+    {
+      "activity": "Commencement",
+      "location": "Spanos Stadium",
+      "date": "Saturday 06/15/2025",
+      "going": "A,B,C",
+      "notes": "Meet at Grand at 3pm!"
+    }
+  ]

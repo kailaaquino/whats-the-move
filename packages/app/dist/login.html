@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>What's The Move? | Login</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/auth.css" />
+
+    <!-- Component registration -->
+    <script type="module" crossorigin src="/assets/login-D_SI7bmh.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/state-Dwv5TFWo.js">
+  </head>
+
+  <body>
+    <div class="auth-container">
+      <!-- Left panel -->
+      <div class="auth-left">
+        <h1>what’s the move</h1>
+        <p>your friend group’s social planner</p>
+      </div>
+
+      <!-- Right panel: login form -->
+      <div class="auth-right">
+        <mu-auth>
+          <h2>Log in</h2>
+          <login-form api="/auth/login" redirect="/app">
+            <label>
+              <input
+                name="username"
+                placeholder="Username"
+                autocomplete="off"
+              />
+            </label>
+            <label>
+              <input name="password" placeholder="Password" type="password" />
+            </label>
+          </login-form>
+          <div class="auth-footer">
+            Don’t have an account?
+            <a href="/new-user.html">Sign up</a>
+          </div>
+        </mu-auth>
+      </div>
+    </div>
+  </body>
+</html>

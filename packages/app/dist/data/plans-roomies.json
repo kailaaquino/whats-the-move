@@ -1,0 +1,30 @@
+[
+    {
+      "activity": "Bonfire @ Grover Beach",
+      "location":"Grover Beach" ,
+      "date": "Saturday 05/17/2025",
+      "going": "A,B,C",
+      "notes": "Meet at 5pm! Bring blankets"
+    },
+    {
+      "activity": "Hike @ Bishop Peak",
+      "location": "Bishop trailhead at Patricia Dr",
+      "date": "Sunday 05/18/2025",
+      "going": "D,E",
+      "notes": "Leave by 8am"
+    },
+    {
+      "activity": "Dinner @ Woodstocks",
+      "location": "Woodstocks Downtown",
+      "date": "Wednesday 05/21/2025",
+      "going": "X,Y,Z",
+      "notes": "Meet at 9pm!"
+    },
+    {
+      "activity": "Solvang Day Trip",
+      "location": "Solvang, CA",
+      "date": "Saturday 05/24/2025",
+      "going": "A,B,C",
+      "notes": "Meet at @A's house"
+    }
+  ]
