@@ -23,10 +23,12 @@
   <body class="page">
     <mu-history provides="wtm:history">
       <mu-auth provides="wtm:auth" redirect="/login.html">
+        <mu-store provides="wtm:model">
         <article class="page">
           <wtm-nav></wtm-nav>
           <mu-switch></mu-switch>
         </article>
+        </mu-store>
       </mu-auth>
     </mu-history>
 

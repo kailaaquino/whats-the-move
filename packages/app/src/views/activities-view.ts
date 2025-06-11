@@ -1,58 +1,51 @@
-import { html, LitElement } from "lit";
-import { property, state } from "lit/decorators.js";
+import { html } from "lit";
+import { property } from "lit/decorators.js";
+import { View } from "@calpoly/mustang";
+import { Model } from "../model";
+import { Msg } from "../messages";
+import { Activity } from "server/models";
 
-interface GroupData {
-  groupId: string;
-  groupName: string;
-  members: string;
-  upcoming: string;
-  plansHref: string;
-  membersHref: string;
-}
+export class ActivitiesViewElement extends View<Model, Msg> {
+  @property({ attribute: "group-id" })
+  groupId = "";
 
-export class ActivitiesViewElement extends LitElement {
-  @property({ attribute: "group-id" }) groupId = "";
-
-  @state()
-  groupData?: GroupData;
-
-  connectedCallback() {
-    super.connectedCallback();
-    this.loadGroupData();
+  constructor() {
+    super("wtm:model"); 
   }
 
-  async loadGroupData() {
-    try {
-      const res = await fetch("/data/groups.json");
-      const groups: GroupData[] = await res.json();
-      this.groupData = groups.find((g) => g.groupId === this.groupId);
-    } catch (err) {
-      console.error("Error loading group data", err);
+  get activity(): Activity | undefined {
+    return this.model.activity;
+  }
+
+  attributeChangedCallback(name: string, oldVal: string, newVal: string) {
+    super.attributeChangedCallback(name, oldVal, newVal);
+    if (name === "group-id" && newVal) {
+      this.dispatchMessage(["activity/select", { activityId: newVal }]);
     }
   }
 
   render() {
-    if (!this.groupData) {
-      return html`<p>Loading group info...</p>`;
+    if (!this.activity) {
+      return html`<p>Loading activity data...</p>`;
     }
+
     return html`
       <div class="page-grid">
         <div class="page-header-grid">
           <page-header
             type="group"
-            group-name=${this.groupData.groupName}
+            group-name=${this.activity.groupId}
           ></page-header>
+
           <friend-nav
-            group-id=${this.groupId}
+            group-id=${this.activity.groupId}
             activeTab="Activities"
           ></friend-nav>
         </div>
 
         <main>
           <section class="activities">
-            <activity-list
-              src="/data/activities-${this.groupId}.json"
-            ></activity-list>
+            <activity-list .activity=${this.activity}></activity-list>
           </section>
         </main>
       </div>

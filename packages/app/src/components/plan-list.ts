@@ -1,6 +1,7 @@
 import { html, css, LitElement } from "lit";
-import { property, state } from "lit/decorators.js";
-import { reset } from "../../public/styles/reset.css.js";
+import { property } from "lit/decorators.js";
+import { reset } from "../styles/reset.css.ts";
+import "../components/plan-card";
 
 /* Wrapper for all the plans */
 interface Plan {
@@ -12,29 +13,7 @@ interface Plan {
 }
 
 export class PlanList extends LitElement {
-  @property() src?: string;
-  @state() plans: Plan[] = [];
-
-  override connectedCallback() {
-    super.connectedCallback();
-    if (this.src) this.hydrate(this.src);
-  }
-
-  hydrate(src: string) {
-    fetch(src)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Failed to load ${src}`);
-        }
-        return res.json();
-      })
-      .then((json: object) => {
-        this.plans = json as Plan[];
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
+  @property({ type: Array }) plans: Plan[] = [];
 
   renderPlan(plan: Plan) {
     return html`

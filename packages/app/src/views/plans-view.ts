@@ -1,40 +1,32 @@
-import { html, LitElement } from "lit";
-import { property, state } from "lit/decorators.js";
+import { html } from "lit";
+import { property } from "lit/decorators.js";
+import { View } from "@calpoly/mustang";
+import { Model } from "../model";
+import { Msg } from "../messages";
+import { Plans } from "server/models";
 
-interface GroupData {
-  groupId: string;
-  groupName: string;
-  members: string;
-  upcoming: string;
-  plansHref: string;
-  membersHref: string;
-}
-
-export class PlansViewElement extends LitElement {
+export class PlansViewElement extends View<Model, Msg> {
   @property({ attribute: "group-id" })
-  groupId: string = "";
+  groupId?: string;
 
-  @state()
-  groupData?: GroupData;
-
-  connectedCallback() {
-    super.connectedCallback();
-    this.loadGroupData();
+  constructor() {
+    super("wtm:model");
   }
 
-  async loadGroupData() {
-    try {
-      const res = await fetch("/data/groups.json");
-      const groups: GroupData[] = await res.json();
-      this.groupData = groups.find((g) => g.groupId === this.groupId);
-    } catch (err) {
-      console.error("Error loading group data", err);
+  get plans(): Plans[] | undefined {
+    return this.model.plans;
+  }
+
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+    super.attributeChangedCallback(name, oldValue, newValue);
+    if (name === "group-id" && newValue) {
+      this.dispatchMessage(["plan/select", { planid: newValue }]);
     }
   }
 
   render() {
-    if (!this.groupData) {
-      return html`<p>Loading group info...</p>`;
+    if (!this.plans) {
+      return html`<p>Loading plan info...</p>`;
     }
 
     return html`
@@ -42,13 +34,14 @@ export class PlansViewElement extends LitElement {
         <div class="page-header-grid">
           <page-header
             type="group"
-            group-name=${this.groupData.groupName}
+            group-name=${this.groupId}
           ></page-header>
-<friend-nav
+          <friend-nav
             group-id=${this.groupId}
             activeTab="Plans"
-          ></friend-nav>        </div>
-        <plan-list src="/data/plans-${this.groupId}.json"></plan-list>
+          ></friend-nav>
+        </div>
+        <plan-list .plans=${this.plans}></plan-list>
       </div>
     `;
   }

@@ -1,13 +1,17 @@
-import { define, Auth, History, Switch } from "@calpoly/mustang";
+import { define, Auth, History, Switch, Store } from "@calpoly/mustang";
 import { html } from "lit";
+import { Msg } from "./messages";
+import { Model, init } from "./model";
+import update from "./update";
+
 import { NavBar } from "./components/nav-bar";
 import { PageHeader } from "./components/page-header";
 
 import { GroupList } from "./components/group-list";
 import { GroupCard } from "./components/group-card";
 import { FriendNav } from "./components/friend-nav";
-import { PlanList } from "./components/plan-list";
 import { PlanCard } from "./components/plan-card";
+import { PlanList } from "./components/plan-list";
 import { AvatarCircle } from "./components/avatar-circle";
 import { ActivityCard } from "./components/activity-card";
 import { ActivityList } from "./components/activity-list";
@@ -21,10 +25,6 @@ const routes = [
     path: "/app",
     view: () => html`<home-view></home-view>`,
   },
-  // {
-  //   path: "/app/group/:groupId",
-  //   redirect: "/app/group/:groupId/plans",
-  // },
   {
     path: "/app/group/:groupId/plans",
     view: (params: Switch.Params) =>
@@ -48,6 +48,11 @@ define({
       super(routes, "wtm:history", "wtm:auth");
     }
   },
+  "mu-store": class AppStore extends Store.Provider<Model, Msg> {
+    constructor() {
+      super(update, init, "wtm:auth");
+    }
+  },
   "home-view": HomeViewElement,
   "plans-view": PlansViewElement,
   "activities-view": ActivitiesViewElement,
@@ -56,7 +61,7 @@ define({
   "activity-list": ActivityList,
   "activity-card": ActivityCard,
   "friend-nav": FriendNav,
-  "plan-list": PlanList,
   "plan-card": PlanCard,
+  "plan-list": PlanList,
   "avatar-circle": AvatarCircle,
 });
