@@ -15,8 +15,8 @@ export default function update(
       );
       break;
     case "activity/select":
-      loadActivity(message[1], user).then((activity) =>
-        apply((model) => ({ ...model, activity }))
+      loadActivity(message[1], user).then((activities) =>
+        apply((model) => ({ ...model, activities }))
       );
       break;
 
@@ -44,7 +44,7 @@ function loadPlan(payload: { planid: string }, user: Auth.User) {
 }
 
 function loadActivity(payload: { activityId: string }, user: Auth.User) {
-  return fetch(`/api/activities/${payload.activityId}`, {
+  return fetch(`/data/activities-${payload.activityId}.json`, {
     headers: Auth.headers(user),
   })
     .then((response: Response) => {
@@ -55,8 +55,8 @@ function loadActivity(payload: { activityId: string }, user: Auth.User) {
     })
     .then((json: unknown) => {
       if (json) {
-        console.log("Activity:", json);
-        return json as Activity;
+        console.log("Activities:", json);
+        return json as Activity[];
       }
     });
 }

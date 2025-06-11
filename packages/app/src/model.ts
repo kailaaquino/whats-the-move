@@ -8,7 +8,7 @@ import {
 } from "server/models";
 
 export interface Model {
-  activity?: Activity;
+  activities?: Activity[];
   availability?: Availability;
   credential?: Credential;
   group?: Group;

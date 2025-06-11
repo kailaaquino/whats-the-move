@@ -13,9 +13,10 @@ export class ActivitiesViewElement extends View<Model, Msg> {
     super("wtm:model"); 
   }
 
-  get activity(): Activity | undefined {
-    return this.model.activity;
+  get activities(): Activity[] | undefined {
+    return this.model.activities;
   }
+  
 
   attributeChangedCallback(name: string, oldVal: string, newVal: string) {
     super.attributeChangedCallback(name, oldVal, newVal);
@@ -25,7 +26,7 @@ export class ActivitiesViewElement extends View<Model, Msg> {
   }
 
   render() {
-    if (!this.activity) {
+    if (!this.activities) {
       return html`<p>Loading activity data...</p>`;
     }
 
@@ -34,18 +35,18 @@ export class ActivitiesViewElement extends View<Model, Msg> {
         <div class="page-header-grid">
           <page-header
             type="group"
-            group-name=${this.activity.groupId}
+            group-name=${this.groupId}
           ></page-header>
 
           <friend-nav
-            group-id=${this.activity.groupId}
+            group-id=${this.groupId}
             activeTab="Activities"
           ></friend-nav>
         </div>
 
         <main>
           <section class="activities">
-            <activity-list .activity=${this.activity}></activity-list>
+<activity-list .activities=${this.activities}></activity-list>
           </section>
         </main>
       </div>

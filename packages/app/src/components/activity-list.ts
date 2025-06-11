@@ -1,6 +1,6 @@
 import { html, css, LitElement } from "lit";
-import { property, state } from "lit/decorators.js";
-import { reset } from "../../public/styles/reset.css.js";
+import { property } from "lit/decorators.js";
+import { reset } from "../styles/reset.css.ts";
 
 /* Wrapper for all activities */
 interface Activity {
@@ -10,29 +10,7 @@ interface Activity {
 }
 
 export class ActivityList extends LitElement {
-  @property() src?: string;
-  @state() activities: Activity[] = [];
-
-  override connectedCallback() {
-    super.connectedCallback();
-    if (this.src) this.hydrate(this.src);
-  }
-
-  hydrate(src: string) {
-    fetch(src)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Failed to load ${src}`);
-        }
-        return res.json();
-      })
-      .then((json: object) => {
-        this.activities = json as Activity[];
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
+  @property({ type: Array }) activities: Activity[] = [];
 
   renderActivity(activity: Activity) {
     return html`
@@ -43,6 +21,7 @@ export class ActivityList extends LitElement {
       ></activity-card>
     `;
   }
+
   render() {
     return html`
       <div class="card-col">
@@ -50,14 +29,14 @@ export class ActivityList extends LitElement {
       </div>
     `;
   }
+
   static styles = [
     reset,
     css`
       .card-col {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
       }
     `,
   ];

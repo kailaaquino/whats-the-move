@@ -1,4 +1,4 @@
-import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d as Q,s as F,_ as G,h as J}from"./state-BkmdFmxF.js";const K={};function Y(a,t,r){switch(a[0]){case"plan/select":Z(a[1],r).then(n=>t(e=>({...e,plans:n})));break;case"activity/select":tt(a[1],r).then(n=>t(e=>({...e,activity:n})));break;default:throw new Error(`Unhandled message: "${a[0]}"`)}}function Z(a,t){return fetch(`/data/plans-${a.planid}.json`,{headers:_.headers(t)}).then(r=>{if(r.status===200)return r.json()}).then(r=>{if(r)return console.log("Plan:",r),r})}function tt(a,t){return fetch(`/api/activities/${a.activityId}`,{headers:_.headers(t)}).then(r=>{if(r.status===200)return r.json()}).then(r=>{if(r)return console.log("Activity:",r),r})}const I=class I extends l{renderSignOutButton(){return o`
+import{a as P,i as l,e as T,x as n,r as u,b as d,O as B,c as U,n as c,V as W,d as D,s as Q,_ as G,h as J}from"./state-BkmdFmxF.js";const K={};function Y(a,t,r){switch(a[0]){case"plan/select":Z(a[1],r).then(o=>t(e=>({...e,plans:o})));break;case"activity/select":F(a[1],r).then(o=>t(e=>({...e,activities:o})));break;default:throw new Error(`Unhandled message: "${a[0]}"`)}}function Z(a,t){return fetch(`/data/plans-${a.planid}.json`,{headers:P.headers(t)}).then(r=>{if(r.status===200)return r.json()}).then(r=>{if(r)return console.log("Plan:",r),r})}function F(a,t){return fetch(`/data/activities-${a.activityId}.json`,{headers:P.headers(t)}).then(r=>{if(r.status===200)return r.json()}).then(r=>{if(r)return console.log("Activities:",r),r})}const I=class I extends l{renderSignOutButton(){return n`
       <button
         class="signout-button"
         @click=${t=>T.relay(t,"auth:message",["auth/signout"])}
@@ -7,7 +7,7 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
           <use href="/icons/sprite.svg#icon-signout" />
         </svg>
       </button>
-    `}render(){return o`<nav class="nav-container">
+    `}render(){return n`<nav class="nav-container">
       <div class="nav-contents">
         <h1><a href="/" class="title-logo">WTM</a></h1>
         <h2>
@@ -43,7 +43,7 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
 
         ${this.renderSignOutButton()}
       </div>
-    </nav>`}};I.styles=[v,d`
+    </nav>`}};I.styles=[u,d`
       .title-logo {
         font-family: var(--font-logo);
         font-size: var(--size-font-xxl);
@@ -99,13 +99,13 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
         fill: currentColor;
         color: var(--color-text-primary);
       }
-    `];let k=I;var et=Object.defineProperty,z=(a,t,r,n)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&et(t,r,e),e};const O=class O extends l{constructor(){super(...arguments),this.type="home",this.groupName="",this._authObserver=new D(this,"wtm:auth")}connectedCallback(){super.connectedCallback(),this._authObserver.observe(t=>{const r=t.user;this.username=r!=null&&r.authenticated?r.username:void 0})}render(){return o`
+    `];let _=I;var tt=Object.defineProperty,z=(a,t,r,o)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&tt(t,r,e),e};const O=class O extends l{constructor(){super(...arguments),this.type="home",this.groupName="",this._authObserver=new B(this,"wtm:auth")}connectedCallback(){super.connectedCallback(),this._authObserver.observe(t=>{const r=t.user;this.username=r!=null&&r.authenticated?r.username:void 0})}render(){return n`
       <h1 class="page-header">
-        ${this.type==="home"?`Welcome back ${this.username}! What’s your next move?`:o`<a href="/app/group/${this.groupName}/plans"
+        ${this.type==="home"?`Welcome back ${this.username}! What’s your next move?`:n`<a href="/app/group/${this.groupName}/plans"
               >${this.groupName}</a
             >`}
       </h1>
-    `}};O.styles=[v,d`
+    `}};O.styles=[u,d`
       .page-header {
         font-family: var(--font-title);
         font-weight: bold;
@@ -124,7 +124,7 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
       .page-header a:visited {
         color: inherit;
       }
-    `];let f=O;z([c()],f.prototype,"type");z([c({attribute:"group-name"})],f.prototype,"groupName");z([P()],f.prototype,"username");var rt=Object.defineProperty,W=(a,t,r,n)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&rt(t,r,e),e};const j=class j extends l{constructor(){super(...arguments),this.groups=[]}willUpdate(t){console.log("GroupList fetching from:",this.src),t.has("src")&&this.src&&this.hydrate(this.src)}connectedCallback(){super.connectedCallback(),this.src&&this.hydrate(this.src)}hydrate(t){fetch(t).then(r=>{if(!r.ok)throw new Error(`Failed to load ${t}`);return r.json()}).then(r=>{this.groups=r}).catch(r=>{console.error(r)})}renderGroup(t){return o`
+    `];let f=O;z([c()],f.prototype,"type");z([c({attribute:"group-name"})],f.prototype,"groupName");z([U()],f.prototype,"username");var et=Object.defineProperty,R=(a,t,r,o)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&et(t,r,e),e};const j=class j extends l{constructor(){super(...arguments),this.groups=[]}willUpdate(t){console.log("GroupList fetching from:",this.src),t.has("src")&&this.src&&this.hydrate(this.src)}connectedCallback(){super.connectedCallback(),this.src&&this.hydrate(this.src)}hydrate(t){fetch(t).then(r=>{if(!r.ok)throw new Error(`Failed to load ${t}`);return r.json()}).then(r=>{this.groups=r}).catch(r=>{console.error(r)})}renderGroup(t){return n`
       <group-card
         groupName=${t.groupName}
         members=${t.members}
@@ -133,16 +133,16 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
         plans-href=${t.plansHref}
         members-href=${t.membersHref}
       ></group-card>
-    `}render(){return o`<div class="card-row">
-      ${this.groups.length>0?this.groups.map(this.renderGroup):o`<p class="empty-state">No groups to show yet.</p>`}
-    </div>`}};j.styles=[v,d`
+    `}render(){return n`<div class="card-row">
+      ${this.groups.length>0?this.groups.map(this.renderGroup):n`<p class="empty-state">No groups to show yet.</p>`}
+    </div>`}};j.styles=[u,d`
       .card-row {
         display: flex;
         flex-direction: row;
         gap: var(--space-md);
         flex-wrap: wrap;
       }
-    `];let m=j;W([c()],m.prototype,"src");W([P()],m.prototype,"groups");var at=Object.defineProperty,g=(a,t,r,n)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&at(t,r,e),e};const S=class S extends l{constructor(){super(...arguments),this.groupName="",this.members="",this.upcoming="",this.href="",this.plansHref="",this.membersHref=""}render(){return o`<div class="card-container">
+    `];let m=j;R([c()],m.prototype,"src");R([U()],m.prototype,"groups");var rt=Object.defineProperty,g=(a,t,r,o)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&rt(t,r,e),e};const S=class S extends l{constructor(){super(...arguments),this.groupName="",this.members="",this.upcoming="",this.href="",this.plansHref="",this.membersHref=""}render(){return n`<div class="card-container">
         <a href=${this.href} class="card-colorbox">
         <div class="card-colorbox"></div>
       </a>
@@ -159,7 +159,7 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
           <div class="card-textXs">View plans</div>
         </a>
       </div>
-    </div>`}};S.styles=[v,d`
+    </div>`}};S.styles=[u,d`
       .card-container {
         width: 300px; /* fixed width so 3 fit in one row */
         height: 300px; /* fixed height */
@@ -208,9 +208,9 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
         font-size: var(--size-font-xs);
         color: var(--color-text-primary);
       }
-    `];let p=S;g([c()],p.prototype,"groupName");g([c()],p.prototype,"members");g([c()],p.prototype,"upcoming");g([c()],p.prototype,"href");g([c({attribute:"plans-href"})],p.prototype,"plansHref");g([c({attribute:"members-href"})],p.prototype,"membersHref");var it=Object.defineProperty,R=(a,t,r,n)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&it(t,r,e),e};const E=class E extends l{constructor(){super(...arguments),this.activeTab="Plans",this.groupId="",this.tabLinks=[{name:"Create",path:"create"},{name:"Plans",path:"plans"},{name:"Activities",path:"activities"},{name:"Availabilities",path:"Availabilities"},{name:"Members",path:"Members"}]}handleSpaNavigate(t){t.preventDefault();const n=t.currentTarget.getAttribute("href");n&&(history.pushState(null,"",n),window.dispatchEvent(new PopStateEvent("popstate")))}render(){return o`
+    `];let p=S;g([c()],p.prototype,"groupName");g([c()],p.prototype,"members");g([c()],p.prototype,"upcoming");g([c()],p.prototype,"href");g([c({attribute:"plans-href"})],p.prototype,"plansHref");g([c({attribute:"members-href"})],p.prototype,"membersHref");var at=Object.defineProperty,V=(a,t,r,o)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&at(t,r,e),e};const E=class E extends l{constructor(){super(...arguments),this.activeTab="Plans",this.groupId="",this.tabLinks=[{name:"Create",path:"create"},{name:"Plans",path:"plans"},{name:"Activities",path:"activities"},{name:"Availabilities",path:"Availabilities"},{name:"Members",path:"Members"}]}handleSpaNavigate(t){t.preventDefault();const o=t.currentTarget.getAttribute("href");o&&(history.pushState(null,"",o),window.dispatchEvent(new PopStateEvent("popstate")))}render(){return n`
       <nav class="friendbar">
-        ${this.tabLinks.map(t=>{const r=`/app/group/${this.groupId}/${t.path}`;return o`
+        ${this.tabLinks.map(t=>{const r=`/app/group/${this.groupId}/${t.path}`;return n`
             <a
               class="friendbar-link ${this.activeTab===t.name?"active":""}"
               href="${r}"
@@ -220,7 +220,7 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
             </a>
           `})}
       </nav>
-    `}};E.styles=[v,d`
+    `}};E.styles=[u,d`
       .friendbar {
         display: flex;
         gap: 2rem;
@@ -241,7 +241,7 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
       .friendbar-link.active {
         border: 1px solid var(--color-text-primary);
       }
-    `];let y=E;R([c({type:String})],y.prototype,"activeTab");R([c({attribute:"group-id"})],y.prototype,"groupId");const V=d`
+    `];let y=E;V([c({type:String})],y.prototype,"activeTab");V([c({attribute:"group-id"})],y.prototype,"groupId");const k=d`
   * {
     margin: 0;
     box-sizing: border-box;
@@ -256,19 +256,19 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
     list-style: none;
     padding: 0;
   }
-`;var st=Object.defineProperty,b=(a,t,r,n)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&st(t,r,e),e};const A=class A extends l{constructor(){super(...arguments),this.activity="",this.location="",this.date="",this.going="",this.notes=""}get goingList(){return this.going.split(",").map(t=>t.trim()).filter(Boolean)}render(){return o`
+`;var it=Object.defineProperty,x=(a,t,r,o)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&it(t,r,e),e};const A=class A extends l{constructor(){super(...arguments),this.activity="",this.location="",this.date="",this.going="",this.notes=""}get goingList(){return this.going.split(",").map(t=>t.trim()).filter(Boolean)}render(){return n`
       <div class="card-container">
         <span class="activity">${this.activity}</span>
         <span class="date">${this.date}</span>
         <div class="going">
           <span>Going:</span>
           <div class="avatar-list">
-            ${this.goingList.map(t=>o`<avatar-circle .initial=${t}></avatar-circle>`)}
+            ${this.goingList.map(t=>n`<avatar-circle .initial=${t}></avatar-circle>`)}
           </div>
         </div>
         <span class="notes"> Notes: ${this.notes}</span>
       </div>
-    `}};A.styles=[V,d`
+    `}};A.styles=[k,d`
       .card-container {
         display: flex;
         width: 300px;
@@ -307,7 +307,7 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
         align-items: center;
         gap: 8.054px;
       }
-    `];let h=A;b([c()],h.prototype,"activity");b([c()],h.prototype,"location");b([c()],h.prototype,"date");b([c()],h.prototype,"going");b([c()],h.prototype,"notes");customElements.define("plan-card",h);var ot=Object.defineProperty,nt=(a,t,r,n)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&ot(t,r,e),e};const N=class N extends l{constructor(){super(...arguments),this.plans=[]}renderPlan(t){return o`
+    `];let h=A;x([c()],h.prototype,"activity");x([c()],h.prototype,"location");x([c()],h.prototype,"date");x([c()],h.prototype,"going");x([c()],h.prototype,"notes");customElements.define("plan-card",h);var st=Object.defineProperty,nt=(a,t,r,o)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&st(t,r,e),e};const N=class N extends l{constructor(){super(...arguments),this.plans=[]}renderPlan(t){return n`
       <plan-card
         activity=${t.activity}
         location=${t.location}
@@ -315,19 +315,18 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
         going=${t.going}
         notes=${t.notes}
       ></plan-card>
-    `}render(){return o`
+    `}render(){return n`
       <div class="card-row">
-        ${this.plans.map(t=>o`<div>${t.activity}</div>`)}
+        ${this.plans.map(t=>this.renderPlan(t))}
       </div>
-    `}};N.styles=[V,d`
+    `}};N.styles=[k,d`
       .card-row {
         display: flex;
         flex-direction: row;
         gap: var(--space-md);
         flex-wrap: wrap;
-
       }
-    `];let $=N;nt([c({type:Array})],$.prototype,"plans");var ct=Object.defineProperty,lt=(a,t,r,n)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&ct(t,r,e),e};const H=class H extends l{constructor(){super(...arguments),this.initial=""}render(){return o` <div class="circle">${this.initial}</div> `}};H.styles=[v,d`
+    `];let b=N;nt([c({type:Array})],b.prototype,"plans");var ot=Object.defineProperty,ct=(a,t,r,o)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&ot(t,r,e),e};const H=class H extends l{constructor(){super(...arguments),this.initial=""}render(){return n` <div class="circle">${this.initial}</div> `}};H.styles=[u,d`
       .circle {
         display: flex;
         width: 31.209px;
@@ -342,13 +341,13 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
         color: var(--color-bg-dark);
         font-family: var(--font-body);
       }
-    `];let w=H;lt([c()],w.prototype,"initial");var dt=Object.defineProperty,C=(a,t,r,n)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&dt(t,r,e),e};const L=class L extends l{constructor(){super(...arguments),this.activity="Add Activity",this.location="",this.notes=""}render(){return o`
+    `];let $=H;ct([c()],$.prototype,"initial");var lt=Object.defineProperty,C=(a,t,r,o)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&lt(t,r,e),e};const L=class L extends l{constructor(){super(...arguments),this.activity="Add Activity",this.location="",this.notes=""}render(){return n`
       <div class="card-container">
         <span class="activity-text">${this.activity}</span>
         <span class="activity-text">${this.location}</span>
         <span class="notes">${this.notes}</span>
       </div>
-    `}};L.styles=[v,d`
+    `}};L.styles=[k,d`
       .card-container {
         display: flex;
         padding: 16px;
@@ -374,27 +373,26 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
         font-weight: 400;
         line-height: normal;
       }
-    `];let u=L;C([c()],u.prototype,"activity");C([c()],u.prototype,"location");C([c()],u.prototype,"notes");var pt=Object.defineProperty,X=(a,t,r,n)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&pt(t,r,e),e};const M=class M extends l{constructor(){super(...arguments),this.activities=[]}connectedCallback(){super.connectedCallback(),this.src&&this.hydrate(this.src)}hydrate(t){fetch(t).then(r=>{if(!r.ok)throw new Error(`Failed to load ${t}`);return r.json()}).then(r=>{this.activities=r}).catch(r=>{console.error(r)})}renderActivity(t){return o`
+    `];let v=L;C([c()],v.prototype,"activity");C([c()],v.prototype,"location");C([c()],v.prototype,"notes");customElements.define("activity-card",v);var dt=Object.defineProperty,pt=(a,t,r,o)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&dt(t,r,e),e};const M=class M extends l{constructor(){super(...arguments),this.activities=[]}renderActivity(t){return n`
       <activity-card
         activity=${t.activity}
         location=${t.location}
         notes=${t.notes}
       ></activity-card>
-    `}render(){return o`
+    `}render(){return n`
       <div class="card-col">
         ${this.activities.map(t=>this.renderActivity(t))}
       </div>
-    `}};M.styles=[v,d`
+    `}};M.styles=[k,d`
       .card-col {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
       }
-    `];let x=M;X([c()],x.prototype,"src");X([P()],x.prototype,"activities");class ht extends l{render(){return console.log("Rendering home-view"),o`
+    `];let w=M;pt([c({type:Array})],w.prototype,"activities");class ht extends l{render(){return console.log("Rendering home-view"),n`
       <page-header type="home"></page-header>
       <group-list src="/data/groups.json"></group-list>
-    `}}var vt=Object.defineProperty,ft=(a,t,r,n)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&vt(t,r,e),e};class q extends U{constructor(){super("wtm:model")}get plans(){return this.model.plans}attributeChangedCallback(t,r,n){super.attributeChangedCallback(t,r,n),t==="group-id"&&n&&this.dispatchMessage(["plan/select",{planid:n}])}render(){return this.plans?o`
+    `}}var vt=Object.defineProperty,ft=(a,t,r,o)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&vt(t,r,e),e};class X extends W{constructor(){super("wtm:model")}get plans(){return this.model.plans}attributeChangedCallback(t,r,o){super.attributeChangedCallback(t,r,o),t==="group-id"&&o&&this.dispatchMessage(["plan/select",{planid:o}])}render(){return this.plans?n`
       <div class="page-grid">
         <div class="page-header-grid">
           <page-header
@@ -408,24 +406,24 @@ import{a as _,i as l,e as T,x as o,r as v,b as d,O as D,c as P,n as c,V as U,d a
         </div>
         <plan-list .plans=${this.plans}></plan-list>
       </div>
-    `:o`<p>Loading plan info...</p>`}}ft([c({attribute:"group-id"})],q.prototype,"groupId");var ut=Object.defineProperty,gt=(a,t,r,n)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&ut(t,r,e),e};class B extends U{constructor(){super("blazing:model"),this.groupId=""}get activity(){return this.model.activity}attributeChangedCallback(t,r,n){super.attributeChangedCallback(t,r,n),t==="group-id"&&n&&this.dispatchMessage(["activity/select",{activityId:n}])}render(){return this.activity?o`
+    `:n`<p>Loading plan info...</p>`}}ft([c({attribute:"group-id"})],X.prototype,"groupId");var ut=Object.defineProperty,gt=(a,t,r,o)=>{for(var e=void 0,i=a.length-1,s;i>=0;i--)(s=a[i])&&(e=s(t,r,e)||e);return e&&ut(t,r,e),e};class q extends W{constructor(){super("wtm:model"),this.groupId=""}get activities(){return this.model.activities}attributeChangedCallback(t,r,o){super.attributeChangedCallback(t,r,o),t==="group-id"&&o&&this.dispatchMessage(["activity/select",{activityId:o}])}render(){return this.activities?n`
       <div class="page-grid">
         <div class="page-header-grid">
           <page-header
             type="group"
-            group-name=${this.activity.groupId}
+            group-name=${this.groupId}
           ></page-header>
 
           <friend-nav
-            group-id=${this.activity.groupId}
+            group-id=${this.groupId}
             activeTab="Activities"
           ></friend-nav>
         </div>
 
         <main>
           <section class="activities">
-            <activity-list .activity=${this.activity}></activity-list>
+<activity-list .activities=${this.activities}></activity-list>
           </section>
         </main>
       </div>
-    `:o`<p>Loading activity data...</p>`}}gt([c({attribute:"group-id"})],B.prototype,"groupId");const mt=[{path:"/app",view:()=>o`<home-view></home-view>`},{path:"/app/group/:groupId/plans",view:a=>o`<plans-view group-id=${a.groupId}></plans-view>`},{path:"/app/group/:groupId/activities",view:a=>o`<activities-view group-id=${a.groupId}></activities-view> `},{path:"/",redirect:"/app"}];Q({"wtm-nav":k,"page-header":f,"mu-auth":_.Provider,"mu-history":J.Provider,"mu-switch":class extends G.Element{constructor(){super(mt,"wtm:history","wtm:auth")}},"mu-store":class extends F.Provider{constructor(){super(Y,K,"wtm:auth")}},"home-view":ht,"plans-view":q,"activities-view":B,"group-list":m,"group-card":p,"activity-list":x,"activity-card":u,"friend-nav":y,"plan-card":h,"plan-list":$,"avatar-circle":w});document.body.addEventListener("theme:toggle",a=>{const t=a.detail.checked;document.body.classList.toggle("light-mode",t)});
+    `:n`<p>Loading activity data...</p>`}}gt([c({attribute:"group-id"})],q.prototype,"groupId");const mt=[{path:"/app",view:()=>n`<home-view></home-view>`},{path:"/app/group/:groupId/plans",view:a=>n`<plans-view group-id=${a.groupId}></plans-view>`},{path:"/app/group/:groupId/activities",view:a=>n`<activities-view group-id=${a.groupId}></activities-view> `},{path:"/",redirect:"/app"}];D({"wtm-nav":_,"page-header":f,"mu-auth":P.Provider,"mu-history":J.Provider,"mu-switch":class extends G.Element{constructor(){super(mt,"wtm:history","wtm:auth")}},"mu-store":class extends Q.Provider{constructor(){super(Y,K,"wtm:auth")}},"home-view":ht,"plans-view":X,"activities-view":q,"group-list":m,"group-card":p,"activity-list":w,"activity-card":v,"friend-nav":y,"plan-card":h,"plan-list":b,"avatar-circle":$});document.body.addEventListener("theme:toggle",a=>{const t=a.detail.checked;document.body.classList.toggle("light-mode",t)});
