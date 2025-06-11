@@ -14,6 +14,8 @@ export class ActivityCard extends LitElement {
         <span class="activity-text">${this.activity}</span>
         <span class="activity-text">${this.location}</span>
         <span class="notes">${this.notes}</span>
+        <a class="edit-link" href="/app/edit-activity/684a08c64a2bdb006df8951b">Edit</a>
+
       </div>
     `;
   }

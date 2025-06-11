@@ -26,6 +26,7 @@ var import_mongo = require("./services/mongo");
 var import_user_svc = __toESM(require("./services/user-svc"));
 var import_users = __toESM(require("./routes/users"));
 var import_auth = __toESM(require("./routes/auth"));
+var import_activities = __toESM(require("./routes/activities"));
 var import_promises = __toESM(require("node:fs/promises"));
 var import_path = __toESM(require("path"));
 const app = (0, import_express.default)();
@@ -37,11 +38,10 @@ app.use(import_express.default.static(staticDir));
 app.use(import_express.default.json());
 app.use("/api/users", import_auth.authenticateUser, import_users.default);
 app.use("/auth", import_auth.default);
+app.use("/api/activities", import_auth.authenticateUser, import_activities.default);
 app.use("/app", (req, res) => {
   const indexHtml = import_path.default.resolve(staticDir, "index.html");
-  import_promises.default.readFile(indexHtml, { encoding: "utf8" }).then(
-    (html) => res.send(html)
-  );
+  import_promises.default.readFile(indexHtml, { encoding: "utf8" }).then((html) => res.send(html));
 });
 app.get("/hello", (req, res) => {
   res.send("Hello, World");

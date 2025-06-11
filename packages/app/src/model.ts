@@ -9,6 +9,8 @@ import {
 
 export interface Model {
   activities?: Activity[];
+  activity?: Activity;
+
   availability?: Availability;
   credential?: Credential;
   group?: Group;

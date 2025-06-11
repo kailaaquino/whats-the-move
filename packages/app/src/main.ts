@@ -19,7 +19,7 @@ import { ActivityList } from "./components/activity-list";
 import { HomeViewElement } from "./views/home-view";
 import { PlansViewElement } from "./views/plans-view";
 import { ActivitiesViewElement } from "./views/activities-view";
-
+import { ActivityEditElement } from "./views/actitivity-edit";
 const routes = [
   {
     path: "/app",
@@ -34,6 +34,11 @@ const routes = [
     path: "/app/group/:groupId/activities",
     view: (params: Switch.Params) =>
       html`<activities-view group-id=${params.groupId}></activities-view> `,
+  },
+  {
+    path: "/app/edit-activity/:activityId",
+    view: (params: Switch.Params) =>
+      html`<activity-edit activity-id=${params.activityId}></activity-edit>`,
   },
   { path: "/", redirect: "/app" },
 ];
@@ -64,4 +69,6 @@ define({
   "plan-card": PlanCard,
   "plan-list": PlanList,
   "avatar-circle": AvatarCircle,
+  "activity-edit": ActivityEditElement
+
 });
