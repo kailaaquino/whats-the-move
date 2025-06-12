@@ -1,6 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
-import { reset } from "../../public/styles/reset.css.js";
+import { reset } from "../styles/reset.css.ts";
 
 export class ActivityCard extends LitElement {
   @property() activity = "Add Activity";
@@ -14,6 +14,8 @@ export class ActivityCard extends LitElement {
         <span class="activity-text">${this.activity}</span>
         <span class="activity-text">${this.location}</span>
         <span class="notes">${this.notes}</span>
+        <a class="edit-link" href="/app/edit-activity/684a08c64a2bdb006df8951b">Edit</a>
+
       </div>
     `;
   }
@@ -49,3 +51,5 @@ export class ActivityCard extends LitElement {
     `,
   ];
 }
+
+customElements.define("activity-card", ActivityCard);

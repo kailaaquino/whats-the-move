@@ -1,7 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
-import { reset } from "../../public/styles/reset.css.js";
-
+import { reset } from "../styles/reset.css.ts";
 /* Individual plan card component */
 export class PlanCard extends LitElement {
   @property() activity = "";
@@ -79,3 +78,5 @@ export class PlanCard extends LitElement {
     `,
   ];
 }
+
+customElements.define("plan-card", PlanCard);
